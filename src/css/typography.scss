@@ -1,0 +1,56 @@
+.q-markdown {
+  &--heading-h1 {
+    font-size: 3rem !important;
+    line-height: 3rem !important;
+  }
+  &--heading-h2 {
+    font-size: 2.5rem !important;
+    line-height: 2.5rem !important;
+  }
+  &--heading-h3 {
+    font-size: 2rem !important;
+    line-height: 2rem !important;
+  }
+  &--heading-h4 {
+    font-size: 1.75rem !important;
+    line-height: 1.75rem !important;
+  }
+  &--heading-h5 {
+    font-size: 1.5rem !important;
+    line-height: 1.5rem !important;
+  }
+  &--heading-h6 {
+    font-size: 1.25rem !important;
+    line-height: 1.25rem !important;
+  }
+}
+
+.q-card__section .q-markdown {
+  *:first-child {
+    margin-top: 0;
+  }
+  *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+[class*='q-markdown--heading-h'] {
+  padding: 0 0 !important;
+}
+
+p {
+  line-height: 1rem;
+  font-size: 1rem;
+}
+
+.q-item__section .q-markdown {
+  * {
+    margin: 0 0;
+  }
+}
+
+.text-caption {
+  p {
+    font-size: inherit;
+  }
+}
