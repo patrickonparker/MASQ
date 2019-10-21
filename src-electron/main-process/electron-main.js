@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow } from 'electron'
 
 /**
  * Set `__statics` path to static files in production;
@@ -7,43 +7,44 @@ import { app, BrowserWindow } from 'electron';
 if (process.env.PROD) {
   global.__statics = require('path')
     .join(__dirname, 'statics')
-    .replace(/\\/g, '\\\\');
+    .replace(/\\/g, '\\\\')
 }
 
-let mainWindow;
+let mainWindow
 
 function createWindow() {
   /**
    * Initial window options
    */
   mainWindow = new BrowserWindow({
-    width: 1000,
-    height: 600,
+    width: 1200,
+    height: 768,
     useContentSize: true,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      devTools: false
     },
     frame: process.platform !== 'darwin' ? false : undefined,
     titleBarStyle: 'hiddenInset'
-  });
+  })
 
-  mainWindow.loadURL(process.env.APP_URL);
+  mainWindow.loadURL(process.env.APP_URL)
 
   mainWindow.on('closed', () => {
-    mainWindow = null;
-  });
+    mainWindow = null
+  })
 }
 
-app.on('ready', createWindow);
+app.on('ready', createWindow)
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
-    app.quit();
+    app.quit()
   }
-});
+})
 
 app.on('activate', () => {
   if (mainWindow === null) {
-    createWindow();
+    createWindow()
   }
-});
+})
