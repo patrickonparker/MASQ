@@ -1,10 +1,17 @@
 <template>
-	<q-layout view="lHh Lpr lFf">
-		<q-header elevated>
+	<q-layout :view="layout">
+		<q-header elevated class="q-electron-drag">
+			<q-bar v-if="winApp">
+				<q-icon name="mdi-laptop" />
+				<div>App Name & Icon</div>
+				<q-space />
+				<q-btn dense flat icon="mdi-window-minimize" @click="minimize" />
+				<q-btn dense flat icon="mdi-window-maximize" @click="maximize" />
+				<q-btn dense flat icon="mdi-close" @click="closeApp" />
+			</q-bar>
 			<q-toolbar
-				class="q-electron-drag"
 				style="transition: .1s;"
-				:style="$q.platform.is.mac && !leftDrawer ? 'margin-top: 30px;' : ''"
+				:style="macApp && !leftDrawer ? 'margin-top: 30px;' : ''"
 			>
 				<q-btn
 					flat
@@ -14,13 +21,13 @@
 					icon="mdi-menu"
 					aria-label="Menu"
 				/>
-				<q-toolbar-title>Quasar App</q-toolbar-title>
+				<q-toolbar-title>Page Title</q-toolbar-title>
 				<div>Quasar v{{ $q.version }}</div>
 			</q-toolbar>
 		</q-header>
 
 		<q-drawer v-model="leftDrawer" show-if-above content-class="bg-grey-10">
-			<q-list dark :style="$q.platform.is.mac ? 'margin-top: 32px;' : ''">
+			<q-list dark :style="macApp ? 'margin-top: 32px;' : ''">
 				<q-item-label header>Essential Links</q-item-label>
 				<q-item clickable tag="a" target="_blank" href="https://quasar.dev">
 					<q-item-section avatar>
@@ -103,7 +110,6 @@
 				</q-item>
 			</q-list>
 		</q-drawer>
-
 		<q-page-container>
 			<router-view />
 		</q-page-container>
@@ -113,11 +119,57 @@
 <script>
 export default {
 	name: "MyLayout",
-
 	data() {
 		return {
 			leftDrawer: false
 		};
+	},
+	computed: {
+		macApp() {
+			return this.$q.platform.is.mac && this.$q.platform.is.electron;
+		},
+
+		winApp() {
+			return this.$q.platform.is.win && this.$q.platform.is.electron;
+		},
+
+		layout() {
+			return this.$q.platform.is.win && this.$q.platform.is.electron
+				? "hHh Lpr lFf"
+				: "lHh Lpr lFf";
+		}
+	},
+	methods: {
+		minimize() {
+			if (process.env.MODE === "electron") {
+				this.$q.electron.remote.BrowserWindow.getFocusedWindow().minimize();
+			}
+		},
+
+		maximize() {
+			if (process.env.MODE === "electron") {
+				const win = this.$q.electron.remote.BrowserWindow.getFocusedWindow();
+
+				if (win.isMaximized()) {
+					win.unmaximize();
+				} else {
+					win.maximize();
+				}
+			}
+		},
+
+		close() {
+			if (process.env.MODE === "electron") {
+				this.$q.electron.remote.BrowserWindow.getFocusedWindow().close();
+			}
+		}
+	},
+	created() {
+		if (this.winApp || this.macApp) {
+			document.getElementsByTagName("body")[0].style.overflow = "hidden";
+			document.getElementById("q-app").style.overflow = "auto";
+			document.getElementById("q-app").style.maxHeight = "100vh";
+		}
 	}
 };
 </script>

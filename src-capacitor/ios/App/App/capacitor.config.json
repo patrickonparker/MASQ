@@ -1,0 +1,10 @@
+{
+  "appId": "nucleus",
+  "appName": "Nucleus",
+  "bundledWebRuntime": false,
+  "npmClient": "yarn",
+  "webDir": "www",
+  "server": {
+    "url": "http://10.196.192.135:8080"
+  }
+}

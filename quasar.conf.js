@@ -122,13 +122,13 @@ module.exports = function(ctx) {
 
     // https://quasar.dev/quasar-cli/developing-cordova-apps/configuring-cordova
     cordova: {
-      // id: 'nucleus',
+      // id: 'com.company.nucleus'
       // noIosLegacyBuildFlag: true, // uncomment only if you know what you are doing
     },
 
     // https://quasar.dev/quasar-cli/developing-electron-apps/configuring-electron
     electron: {
-      // bundler: 'builder', // or 'packager'
+      bundler: 'builder', // or 'packager'
 
       extendWebpack(cfg) {
         // do something with Electron main process Webpack cfg
@@ -148,8 +148,11 @@ module.exports = function(ctx) {
 
       builder: {
         // https://www.electron.build/configuration/configuration
-        // appId: 'nucleus'
+        appId: 'nucleus',
+        win: {
+          target: 'portable'
+        }
       }
     }
-  };
-};
+  }
+}
