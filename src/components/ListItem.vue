@@ -1,5 +1,5 @@
 <template>
-	<q-item v-bind="blok" :inset-level="blok.inset_level">
+	<q-item v-bind="blok" :inset-level="Number(blok.inset_level)">
 		<q-item-section avatar v-if="blok.avatar || blok.avatar_text">
 			<q-avatar :color="blok.color" text-color="white">
 				<span v-if="blok.avatar_text">{{ blok.avatar_text }}</span>
