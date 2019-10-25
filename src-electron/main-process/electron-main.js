@@ -26,7 +26,8 @@ function createWindow() {
     },
     frame: process.platform !== 'darwin' ? false : undefined,
     titleBarStyle:
-      process.platform === 'darwin' ? 'hiddenInset' : ''
+      process.platform === 'darwin' ? 'hiddenInset' : '',
+    vibrancy: 'ultra-dark'
   })
 
   mainWindow.loadURL(process.env.APP_URL)

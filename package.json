@@ -3,28 +3,34 @@
   "version": "0.0.1",
   "description": "A Quasar Framework app",
   "productName": "Nucleus",
-  "cordovaId": "nucleus",
+  "cordovaId": "com.lovallo.nucleus",
   "capacitorId": "",
   "author": "James Lovallo <patrickonparker@gmail.com>",
   "private": true,
   "scripts": {
-    "test": "echo \"No test specified\" && exit 0"
+    "test": "echo \"No test specified\" && exit 0",
+    "Dev": "quasar dev --port 8080",
+    "Dev_Electron": "quasar dev -m electron --port 8081",
+    "Dev_iOS": "quasar dev -m ios --port 8082",
+    "Dev_Android": "quasar dev -m android --port 8083",
+    "Dev_PWA": "quasar dev -m pwa --port 8084",
+    "Build_iOS": "quasar build -m ios"
   },
   "dependencies": {
     "@quasar/extras": "^1.3.2",
-    "quasar": "^1.2.4",
-    "storyblok-js-client": "^2.0.8",
+    "quasar": "^1.2.5",
+    "storyblok-js-client": "^2.0.10",
     "webpack": "^4.41.2"
   },
   "devDependencies": {
     "@quasar/app": "^1.2.2",
     "@quasar/quasar-app-extension-qmarkdown": "^1.0.0-beta.21",
     "devtron": "^1.4.0",
-    "electron": "^6.0.12",
-    "electron-builder": "^21.0.0",
+    "electron": "^7.0.0",
+    "electron-builder": "^21.2.0",
     "electron-debug": "^3.0.1",
     "electron-devtools-installer": "^2.2.4",
-    "electron-packager": "^13.1.0"
+    "electron-packager": "^14.0.6"
   },
   "engines": {
     "node": ">= 8.9.0",

@@ -1,7 +1,0 @@
-{
-  "appId": "com.lovallo.nucleus",
-  "appName": "Nucleus",
-  "bundledWebRuntime": false,
-  "npmClient": "yarn",
-  "webDir": "www"
-}

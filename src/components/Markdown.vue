@@ -1,11 +1,9 @@
 <template>
-	<div id="q-app">
-		<router-view />
-	</div>
+	<q-markdown v-bind="blok" />
 </template>
 
 <script>
 	export default {
-		name: "App"
+		props: ["blok"]
 	};
 </script>

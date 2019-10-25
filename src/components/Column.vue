@@ -1,102 +1,30 @@
 <template>
-  <div :class="responsive">
-    <component
-      v-for="blok in blok.children"
-      :key="blok._uid"
-      :is="blok.component"
-      :blok="blok"
-      v-bind="blok"
-    >
-      <component
-        v-for="blok in blok.children"
-        :key="blok._uid"
-        :is="blok.component"
-        :blok="blok"
-        v-bind="blok"
-      >
-        <component
-          v-for="blok in blok.children"
-          :key="blok._uid"
-          :is="blok.component"
-          :blok="blok"
-          v-bind="blok"
-        >
-          <component
-            v-for="blok in blok.children"
-            :key="blok._uid"
-            :is="blok.component"
-            :blok="blok"
-            v-bind="blok"
-          >
-            <component
-              v-for="blok in blok.children"
-              :key="blok._uid"
-              :is="blok.component"
-              :blok="blok"
-              v-bind="blok"
-            >
-              <component
-                v-for="blok in blok.children"
-                :key="blok._uid"
-                :is="blok.component"
-                :blok="blok"
-                v-bind="blok"
-              >
-                <component
-                  v-for="blok in blok.children"
-                  :key="blok._uid"
-                  :is="blok.component"
-                  :blok="blok"
-                  v-bind="blok"
-                >
-                  <component
-                    v-for="blok in blok.children"
-                    :key="blok._uid"
-                    :is="blok.component"
-                    :blok="blok"
-                    v-bind="blok"
-                  >
-                    <component
-                      v-for="blok in blok.children"
-                      :key="blok._uid"
-                      :is="blok.component"
-                      :blok="blok"
-                      v-bind="blok"
-                    >
-                      <component
-                        v-for="blok in blok.children"
-                        :key="blok._uid"
-                        :is="blok.component"
-                        :blok="blok"
-                        v-bind="blok"
-                      ></component>
-                    </component>
-                  </component>
-                </component>
-              </component>
-            </component>
-          </component>
-        </component>
-      </component>
-    </component>
-  </div>
+	<div :class="responsive">
+		<component
+			v-for="blok in blok.children"
+			:key="blok._uid"
+			:is="blok.component"
+			:blok="blok"
+			v-bind="blok"
+		/>
+	</div>
 </template>
 
 <script>
-export default {
-  props: ["blok"],
-  computed: {
-    responsive() {
-      let bootstrapCols = ["xsmall", "small", "medium", "large", "xlarge"];
-      let quasarCols = ["xs", "sm", "md", "lg", "xl"];
-      let classes = [];
-      for (let i = 0, cols = bootstrapCols.length; i < cols; i++) {
-        let size = this.blok.responsive[`${bootstrapCols[i]}`];
-        let col = quasarCols[i];
-        size.length > 0 ? classes.push(`col-${col}-${size}`) : "";
-      }
-      return classes;
-    }
-  }
-};
+	export default {
+		props: ["blok"],
+		computed: {
+			responsive() {
+				let bootstrapCols = ["xsmall", "small", "medium", "large", "xlarge"];
+				let quasarCols = ["xs", "sm", "md", "lg", "xl"];
+				let classes = [];
+				for (let i = 0, cols = bootstrapCols.length; i < cols; i++) {
+					let size = this.blok.responsive[`${bootstrapCols[i]}`];
+					let col = quasarCols[i];
+					size.length > 0 ? classes.push(`col-${col}-${size}`) : "";
+				}
+				return classes;
+			}
+		}
+	};
 </script>
