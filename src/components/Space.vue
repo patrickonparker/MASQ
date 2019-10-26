@@ -1,0 +1,3 @@
+<template>
+  <q-space />
+</template>

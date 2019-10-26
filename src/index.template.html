@@ -47,5 +47,21 @@
   <body>
     <!-- DO NOT touch the following DIV -->
     <div id="q-app"></div>
+    <script
+      src="//app.storyblok.com/f/storyblok-latest.js?t=BQbCs8YukzGveNbBLlyoSgtt"
+      type="text/javascript"
+    ></script>
+    <script>
+      // Optionally init if you have not provided the ?t parameter to the script tag already.
+      storyblok.on(['published', 'change'], function() {
+        location.reload(true);
+      });
+
+      storyblok.pingEditor(function() {
+        if (storyblok.inEditor) {
+          storyblok.enterEditmode();
+        }
+      });
+    </script>
   </body>
 </html>
