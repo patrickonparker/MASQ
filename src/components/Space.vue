@@ -1,3 +1,3 @@
 <template>
-  <q-space />
+	<q-space v-editable="blok" />
 </template>

@@ -21,6 +21,7 @@
     "quasar": "^1.2.5",
     "storyblok-js-client": "^2.0.10",
     "storyblok-vue": "^1.0.5",
+    "vue": "^2.6.10",
     "vue-fragment": "^1.5.1",
     "webpack": "^4.41.2"
   },

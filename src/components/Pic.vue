@@ -1,5 +1,5 @@
 <template>
-	<q-img v-bind="blok" :src="dynamic" :ratio="ratio"></q-img>
+	<q-img v-bind="blok" :src="dynamic" :ratio="ratio" v-editable="blok" />
 </template>
 
 <script>

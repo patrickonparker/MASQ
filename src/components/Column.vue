@@ -1,11 +1,10 @@
 <template>
-	<div :class="responsive">
+	<div :class="responsive" v-editable="blok">
 		<component
 			v-for="blok in blok.children"
 			:key="blok._uid"
 			:is="blok.component"
 			:blok="blok"
-			v-bind="blok"
 		/>
 	</div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-	<q-markdown v-bind="blok" />
+	<q-markdown v-bind="blok" v-editable="blok" />
 </template>
 
 <script>

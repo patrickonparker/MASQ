@@ -1,5 +1,5 @@
 <template>
-	<q-btn v-bind="blok" :no-caps="blok.no_caps" :icon="'mdi-' + blok.icon" />
+	<q-btn v-bind="blok" :icon="'mdi-' + blok.icon" :no-caps="blok.no_caps" />
 </template>
 
 <script>

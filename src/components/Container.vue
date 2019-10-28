@@ -4,13 +4,13 @@
 			'container',
 			`${blok.disable_bottom_margin ? '' : 'standard-margin'}`
 		]"
+		v-editable="blok"
 	>
 		<component
 			v-for="blok in blok.children"
 			:key="blok._uid"
 			:is="blok.component"
 			:blok="blok"
-			v-bind="blok"
 		/>
 	</div>
 </template>
@@ -27,6 +27,7 @@
 		width: 100%;
 	}
 	.standard-margin {
-		margin: 0 auto 45px auto;
+		margin: 0 auto;
+		padding-bottom: 45px;
 	}
 </style>

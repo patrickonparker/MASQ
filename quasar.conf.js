@@ -154,5 +154,5 @@ module.exports = function(ctx) {
         }
       }
     }
-  };
-};
+  }
+}
