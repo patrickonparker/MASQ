@@ -1,5 +1,5 @@
 <template>
-  <q-card v-bind="blok">
+  <q-card v-bind="blok" v-editable="blok">
     <component v-for="blok in blok.media" :key="blok._uid" :is="blok.component" :blok="blok" />
     <q-card-section
       v-if="blok.content.length > 0"
