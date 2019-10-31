@@ -1,9 +1,9 @@
 {
-  "name": "nucleus",
+  "name": "masq",
   "version": "0.0.1",
   "description": "A Quasar Framework app",
-  "productName": "Nucleus",
-  "cordovaId": "com.lovallo.nucleus",
+  "productName": "MASQ",
+  "cordovaId": "com.lovallo.masq",
   "capacitorId": "",
   "author": "James Lovallo <patrickonparker@gmail.com>",
   "private": true,

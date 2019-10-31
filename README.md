@@ -1,4 +1,4 @@
-# Quasar App (nucleus)
+# Quasar App (masq)
 
 A Quasar Framework app
 

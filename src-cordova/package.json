@@ -1,6 +1,6 @@
 {
-  "name": "nucleus",
-  "displayName": "Nucleus",
+  "name": "masq",
+  "displayName": "MASQ",
   "version": "1.0.0",
   "description": "A sample Apache Cordova application that responds to the deviceready event.",
   "main": "index.js",
