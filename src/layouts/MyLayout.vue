@@ -33,7 +33,10 @@
 			show-if-above
 			:content-class="macApp ? '' : ['bg-grey-10']"
 		>
-			<q-list dark :style="macApp ? 'margin-top: 32px;' : ''">
+			<q-list
+				:dark="macApp ? darkTheme : dark"
+				:style="macApp ? 'margin-top: 32px;' : ''"
+			>
 				<q-item-label header>Essential Links</q-item-label>
 				<q-item clickable tag="a" target="_blank" href="https://quasar.dev">
 					<q-item-section avatar>
@@ -134,11 +137,12 @@
 			macApp() {
 				return this.$q.platform.is.mac && this.$q.platform.is.electron;
 			},
-
 			winApp() {
 				return this.$q.platform.is.win && this.$q.platform.is.electron;
 			},
-
+			darkTheme() {
+				return window.matchMedia("(prefers-color-scheme: dark)").matches;
+			},
 			layout() {
 				return this.$q.platform.is.win && this.$q.platform.is.electron
 					? "hHh Lpr lFf"
