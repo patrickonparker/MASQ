@@ -50,7 +50,7 @@ module.exports = function(ctx) {
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
       env: {
-        SB_TOKEN: JSON.stringify('BQbCs8YukzGveNbBLlyoSgtt')
+        SB_TOKEN: JSON.stringify(process.env.SB_TOKEN)
       },
       scopeHoisting: true,
       vueRouterMode: 'history',

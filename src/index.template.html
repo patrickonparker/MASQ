@@ -53,15 +53,15 @@
     ></script>
     <script>
       // Optionally init if you have not provided the ?t parameter to the script tag already.
-      storyblok.on(['published', 'change'], function() {
-        location.reload(true);
-      });
+      window.storyblok.on(['published', 'change'], function() {
+        location.reload(true)
+      })
 
-      storyblok.pingEditor(function() {
-        if (storyblok.inEditor) {
-          storyblok.enterEditmode();
+      window.storyblok.pingEditor(function() {
+        if (window.storyblok.inEditor) {
+          window.storyblok.enterEditmode()
         }
-      });
+      })
     </script>
   </body>
 </html>

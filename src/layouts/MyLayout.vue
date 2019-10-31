@@ -32,92 +32,14 @@
 			v-model="leftDrawer"
 			show-if-above
 			:content-class="macApp ? '' : ['bg-grey-10']"
+			:style="macApp ? 'padding-top: 32px;' : ''"
 		>
-			<q-list
-				:dark="macApp ? darkTheme : dark"
-				:style="macApp ? 'margin-top: 32px;' : ''"
-			>
-				<q-item-label header>Essential Links</q-item-label>
-				<q-item clickable tag="a" target="_blank" href="https://quasar.dev">
-					<q-item-section avatar>
-						<q-icon name="mdi-school" />
-					</q-item-section>
-					<q-item-section>
-						<q-item-label>Docs</q-item-label>
-						<q-item-label caption>quasar.dev</q-item-label>
-					</q-item-section>
-				</q-item>
-				<q-item
-					clickable
-					tag="a"
-					target="_blank"
-					href="https://github.quasar.dev"
-				>
-					<q-item-section avatar>
-						<q-icon name="mdi-github-circle" />
-					</q-item-section>
-					<q-item-section>
-						<q-item-label>Github</q-item-label>
-						<q-item-label caption>github.com/quasarframework</q-item-label>
-					</q-item-section>
-				</q-item>
-				<q-item
-					clickable
-					tag="a"
-					target="_blank"
-					href="https://chat.quasar.dev"
-				>
-					<q-item-section avatar>
-						<q-icon name="mdi-chat" />
-					</q-item-section>
-					<q-item-section>
-						<q-item-label>Discord Chat Channel</q-item-label>
-						<q-item-label caption>chat.quasar.dev</q-item-label>
-					</q-item-section>
-				</q-item>
-				<q-item
-					clickable
-					tag="a"
-					target="_blank"
-					href="https://forum.quasar.dev"
-				>
-					<q-item-section avatar>
-						<q-icon name="mdi-forum" />
-					</q-item-section>
-					<q-item-section>
-						<q-item-label>Forum</q-item-label>
-						<q-item-label caption>forum.quasar.dev</q-item-label>
-					</q-item-section>
-				</q-item>
-				<q-item
-					clickable
-					tag="a"
-					target="_blank"
-					href="https://twitter.quasar.dev"
-				>
-					<q-item-section avatar>
-						<q-icon name="mdi-twitter" />
-					</q-item-section>
-					<q-item-section>
-						<q-item-label>Twitter</q-item-label>
-						<q-item-label caption>@quasarframework</q-item-label>
-					</q-item-section>
-				</q-item>
-				<q-item
-					clickable
-					tag="a"
-					target="_blank"
-					href="https://facebook.quasar.dev"
-				>
-					<q-item-section avatar>
-						<q-icon name="mdi-facebook" />
-					</q-item-section>
-					<q-item-section>
-						<q-item-label>Facebook</q-item-label>
-						<q-item-label caption>@QuasarFramework</q-item-label>
-					</q-item-section>
-				</q-item>
-			</q-list>
+			<component
+				v-for="blok in (layoutContent || {}).sidebar"
+				:key="blok._uid"
+				:is="blok.component"
+				:blok="blok"
+			/>
 		</q-drawer>
 		<q-page-container>
 			<router-view />
@@ -126,10 +48,16 @@
 </template>
 
 <script>
+	import StoryblokClient from "storyblok-js-client";
+	let storyapi = new StoryblokClient({
+		accessToken: process.env.SB_TOKEN
+	});
+
 	export default {
 		name: "MyLayout",
 		data() {
 			return {
+				layoutContent: {},
 				leftDrawer: false
 			};
 		},
@@ -150,12 +78,40 @@
 			}
 		},
 		methods: {
+			async getStory(slug, version) {
+				await storyapi
+					.get("cdn/stories/" + slug, {
+						version: version
+					})
+					.then(response => {
+						this.layoutContent = response.data.story.content;
+					})
+					.catch(error => {
+						console.log(error);
+					});
+			},
+			getVersion() {
+				let path = "layout";
+				if (!this.$q.platform.is.electron && this.$q.platform.within.iframe) {
+					window.storyblok.on("change", () => {
+						this.getStory(path, "draft");
+					});
+					window.storyblok.pingEditor(() => {
+						if (window.storyblok.isInEditor()) {
+							this.getStory(path, "draft");
+						} else {
+							this.getStory(path, "published");
+						}
+					});
+				} else {
+					this.getStory(path, "published");
+				}
+			},
 			minimize() {
 				if (process.env.MODE === "electron") {
 					this.$q.electron.remote.BrowserWindow.getFocusedWindow().minimize();
 				}
 			},
-
 			maximize() {
 				if (process.env.MODE === "electron") {
 					const win = this.$q.electron.remote.BrowserWindow.getFocusedWindow();
@@ -167,7 +123,6 @@
 					}
 				}
 			},
-
 			close() {
 				if (process.env.MODE === "electron") {
 					this.$q.electron.remote.BrowserWindow.getFocusedWindow().close();
@@ -175,6 +130,7 @@
 			}
 		},
 		created() {
+			this.getVersion();
 			if (process.env.MODE === "electron") {
 				document.getElementsByTagName("body")[0].style.overflow = "hidden";
 				document.getElementById("q-app").style.overflow = "auto";

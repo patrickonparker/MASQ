@@ -23,9 +23,8 @@
 
 <script>
 	import StoryblokClient from "storyblok-js-client";
-	const token = process.env.SB_TOKEN;
 	let storyapi = new StoryblokClient({
-		accessToken: token
+		accessToken: process.env.SB_TOKEN
 	});
 
 	export default {
@@ -35,8 +34,8 @@
 			name: ""
 		}),
 		methods: {
-			getStory(slug, version) {
-				storyapi
+			async getStory(slug, version) {
+				await storyapi
 					.get("cdn/stories/" + slug, {
 						version: version
 					})
@@ -52,16 +51,20 @@
 			},
 			getVersion() {
 				let path = this.$route.path === "/" ? "home" : this.$route.path;
-				window.storyblok.on("change", () => {
-					this.getStory(path, "draft");
-				});
-				window.storyblok.pingEditor(() => {
-					if (window.storyblok.isInEditor()) {
+				if (!this.$q.platform.is.electron && this.$q.platform.within.iframe) {
+					window.storyblok.on("change", () => {
 						this.getStory(path, "draft");
-					} else {
-						this.getStory(path, "published");
-					}
-				});
+					});
+					window.storyblok.pingEditor(() => {
+						if (window.storyblok.isInEditor()) {
+							this.getStory(path, "draft");
+						} else {
+							this.getStory(path, "published");
+						}
+					});
+				} else {
+					this.getStory(path, "published");
+				}
 			}
 		},
 		created() {

@@ -4,10 +4,7 @@
 		:inset-level="Number(blok.inset_level)"
 		v-editable="blok"
 	>
-		<q-item-section
-			avatar
-			v-if="(blok.avatar || blok.avatar_text || blok.avatar_icon).length > 0"
-		>
+		<q-item-section avatar>
 			<q-avatar
 				:color="blok.avatar.length > 0 ? '' : blok.avatar_color"
 				text-color="white"

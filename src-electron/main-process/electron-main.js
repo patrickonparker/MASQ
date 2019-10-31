@@ -22,7 +22,7 @@ function createWindow() {
     useContentSize: true,
     webPreferences: {
       nodeIntegration: true,
-      devTools: false
+      devTools: true
     },
     frame: process.platform !== 'darwin' ? false : undefined,
     titleBarStyle:
