@@ -9,16 +9,17 @@
   "private": true,
   "scripts": {
     "test": "echo \"No test specified\" && exit 0",
-    "Dev": "quasar dev --port 8080",
-    "Dev_Electron": "quasar dev -m electron --port 8081",
-    "Dev_iOS": "quasar dev -m ios --port 8082",
-    "Dev_Android": "quasar dev -m android --port 8083",
-    "Dev_PWA": "quasar dev -m pwa --port 8084",
-    "Build_iOS": "quasar build -m ios"
+    "Dev": "netlify dev -c 'quasar d'",
+    "Dev_Electron": "netlify dev -c 'quasar d -m electron'",
+    "Dev_iOS": "netlify dev -c 'quasar d -m ios'",
+    "Dev_Android": "netlify dev -c 'quasar d -m android'",
+    "Dev_PWA": "netlify dev -c 'quasar d -m pwa'"
   },
   "dependencies": {
     "@quasar/extras": "^1.3.2",
-    "quasar": "^1.2.5",
+    "dotenv": "^8.2.0",
+    "portal-vue": "^2.1.6",
+    "quasar": "^1.2.7",
     "storyblok-js-client": "^2.0.10",
     "storyblok-vue": "^1.0.5",
     "vue": "^2.6.10",
@@ -27,13 +28,14 @@
   },
   "devDependencies": {
     "@quasar/app": "^1.2.2",
+    "@quasar/quasar-app-extension-icon-genie": "^1.1.1",
     "@quasar/quasar-app-extension-qmarkdown": "^1.0.0-beta.21",
     "devtron": "^1.4.0",
     "electron": "^7.0.0",
     "electron-builder": "^21.2.0",
     "electron-debug": "^3.0.1",
     "electron-devtools-installer": "^2.2.4",
-    "electron-packager": "^14.0.6"
+    "electron-packager": "^14.1.0"
   },
   "engines": {
     "node": ">= 8.9.0",

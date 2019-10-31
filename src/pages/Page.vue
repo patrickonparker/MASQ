@@ -1,18 +1,29 @@
 <template>
-	<q-page :class="page.class" padding>
+	<q-page :class="(page || {}).class" padding style="height: 100%;">
 		<component
-			v-for="blok in page.body"
+			v-for="blok in (page || {}).body"
 			:key="blok._uid"
 			:is="blok.component"
 			:blok="blok"
 			v-bind="blok"
 		/>
+		<portal to="header">
+			{{ name }}
+		</portal>
+		<div v-if="page === '404'" class="items-center column">
+			<img
+				src="~assets/404.svg"
+				style="height: 300px; width: 300px; display: block;"
+			/>
+			<h2>Sorry, the page "{{ $route.path }}" doesn't exist.</h2>
+			<q-btn to="/" label="Go Home" color="accent" push />
+		</div>
 	</q-page>
 </template>
 
 <script>
 	import StoryblokClient from "storyblok-js-client";
-	const token = "BQbCs8YukzGveNbBLlyoSgtt";
+	const token = process.env.SB_TOKEN;
 	let storyapi = new StoryblokClient({
 		accessToken: token
 	});
@@ -20,7 +31,8 @@
 	export default {
 		name: "Page",
 		data: () => ({
-			page: {}
+			page: {},
+			name: ""
 		}),
 		methods: {
 			getStory(slug, version) {
@@ -30,9 +42,12 @@
 					})
 					.then(response => {
 						this.page = response.data.story.content;
+						this.name = response.data.story.name;
 					})
 					.catch(error => {
 						console.log(error);
+						this.page = "404";
+						this.name = "Page not found";
 					});
 			},
 			getVersion() {

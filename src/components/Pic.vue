@@ -10,7 +10,7 @@
 				if (this.blok.src) {
 					return this.blok.src;
 				} else {
-					let random = Math.floor(100000 + Math.random() * 900000);
+					let random = Math.floor(Math.random() * 1000) + 1;
 					return `https://picsum.photos/600/400?random=${random}`;
 				}
 			},

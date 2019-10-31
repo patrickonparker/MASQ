@@ -1,9 +1,11 @@
 @import './typography.scss';
 
-.q-page {
-  background: white;
-}
+.electron {
+  .q-page {
+    background: white;
+  }
 
-.q-drawer {
-  background: rgba(0, 0, 0, 0.33);
+  .q-drawer {
+    background: rgba(0, 0, 0, 0.33);
+  }
 }

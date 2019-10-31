@@ -1,6 +1,5 @@
 // Configuration for your app
 // https://quasar.dev/quasar-cli/quasar-conf-js
-
 module.exports = function(ctx) {
   return {
     // app boot file (/src/boot)
@@ -50,6 +49,9 @@ module.exports = function(ctx) {
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
+      env: {
+        SB_TOKEN: JSON.stringify('BQbCs8YukzGveNbBLlyoSgtt')
+      },
       scopeHoisting: true,
       vueRouterMode: 'history',
       // showProgress: false,

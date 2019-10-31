@@ -1,5 +1,5 @@
 <template>
-	<q-layout :view="layout">
+	<q-layout :view="layout" :class="macApp ? 'electron' : false">
 		<q-header elevated class="q-electron-drag">
 			<q-bar v-if="winApp">
 				<q-icon name="mdi-laptop" />
@@ -21,7 +21,9 @@
 					icon="mdi-menu"
 					aria-label="Menu"
 				/>
-				<q-toolbar-title>Page Title</q-toolbar-title>
+				<q-toolbar-title>
+					<portal-target name="header" />
+				</q-toolbar-title>
 				<div>Quasar v{{ $q.version }}</div>
 			</q-toolbar>
 		</q-header>
@@ -29,7 +31,7 @@
 		<q-drawer
 			v-model="leftDrawer"
 			show-if-above
-			:content-class="macApp ? '' : 'bg-grey-10'"
+			:content-class="macApp ? '' : ['bg-grey-10']"
 		>
 			<q-list dark :style="macApp ? 'margin-top: 32px;' : ''">
 				<q-item-label header>Essential Links</q-item-label>
