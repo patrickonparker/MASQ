@@ -1,6 +1,6 @@
 <template>
 	<q-layout :view="layout" :class="macApp ? 'electron-mac' : false">
-		<q-header elevated class="q-electron-drag">
+		<q-header elevated class="q-electron-drag non-selectable">
 			<q-bar v-if="winApp">
 				<q-icon name="mdi-laptop" />
 				<div>App Name & Icon</div>
@@ -25,7 +25,12 @@
 			</q-toolbar>
 		</q-header>
 
-		<q-drawer v-model="leftDrawer" show-if-above content-class="bg-grey-10">
+		<q-drawer
+			v-model="leftDrawer"
+			show-if-above
+			content-class="bg-grey-10"
+			class="non-selectable"
+		>
 			<div :style="macApp ? 'height: 32px;' : ''" />
 			<component
 				v-for="blok in (layoutContent || {}).sidebar"
