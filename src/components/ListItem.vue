@@ -2,6 +2,7 @@
 	<q-item
 		v-bind="blok"
 		:inset-level="Number(blok.inset_level)"
+		v-ripple
 		v-editable="blok"
 	>
 		<q-item-section avatar>

@@ -21,7 +21,14 @@
 			<h3 style="padding: 0 20px">
 				Sorry, the page "{{ $route.path }}" does not exist.
 			</h3>
-			<q-btn to="/" label="Go Home" icon="mdi-home" color="accent" push />
+			<q-btn
+				to="/"
+				label="Go Home"
+				icon="mdi-home"
+				color="accent"
+				push
+				v-ripple
+			/>
 		</div>
 	</q-page>
 </template>
