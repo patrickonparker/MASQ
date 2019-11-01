@@ -1,5 +1,5 @@
 <template>
-	<q-page :class="(page || {}).class" padding style="height: 100%;">
+	<q-page :class="(page || {}).class" padding>
 		<component
 			v-for="blok in (page || {}).body"
 			:key="blok._uid"
@@ -10,13 +10,18 @@
 		<portal to="header">
 			{{ name }}
 		</portal>
-		<div v-if="page === '404'" class="items-center column">
+		<div
+			v-if="page === '404' && $route.path !== '/'"
+			class="items-center column text-center"
+		>
 			<img
 				src="~assets/404.svg"
 				style="height: 300px; width: 300px; display: block;"
 			/>
-			<h2>Sorry, the page "{{ $route.path }}" doesn't exist.</h2>
-			<q-btn to="/" label="Go Home" color="accent" push />
+			<h3 style="padding: 0 20px">
+				Sorry, the page "{{ $route.path }}" does not exist.
+			</h3>
+			<q-btn to="/" label="Go Home" icon="mdi-home" color="accent" push />
 		</div>
 	</q-page>
 </template>

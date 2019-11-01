@@ -1,5 +1,5 @@
 <template>
-	<q-layout :view="layout" :class="macApp ? 'electron' : false">
+	<q-layout :view="layout" :class="macApp ? 'electron-mac' : false">
 		<q-header elevated class="q-electron-drag">
 			<q-bar v-if="winApp">
 				<q-icon name="mdi-laptop" />
@@ -9,10 +9,7 @@
 				<q-btn dense flat icon="mdi-window-maximize" @click="maximize" />
 				<q-btn dense flat icon="mdi-close" @click="close" />
 			</q-bar>
-			<q-toolbar
-				style="transition: .1s;"
-				:style="macApp && !leftDrawer ? 'margin-top: 30px;' : ''"
-			>
+			<q-toolbar :class="!leftDrawer ? 'd-closed' : ''">
 				<q-btn
 					flat
 					dense
@@ -28,12 +25,8 @@
 			</q-toolbar>
 		</q-header>
 
-		<q-drawer
-			v-model="leftDrawer"
-			show-if-above
-			:content-class="macApp ? '' : ['bg-grey-10']"
-			:style="macApp ? 'padding-top: 32px;' : ''"
-		>
+		<q-drawer v-model="leftDrawer" show-if-above content-class="bg-grey-10">
+			<div :style="macApp ? 'height: 32px;' : ''" />
 			<component
 				v-for="blok in (layoutContent || {}).sidebar"
 				:key="blok._uid"

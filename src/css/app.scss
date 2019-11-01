@@ -1,16 +1,35 @@
 @import './typography.scss';
 
-.electron {
+.electron-mac {
+  .q-header .q-toolbar {
+    transition: 0.1s;
+    &.d-closed {
+      margin-top: 30px;
+    }
+    @media (max-width: 1024px) {
+      margin-top: 30px;
+    }
+  }
+  .q-drawer,
+  .q-drawer__content {
+    @media (min-width: 1024px) {
+      & {
+        @media (prefers-color-scheme: 'dark') {
+          background-color: rgba(0, 0, 0, 0.1) !important;
+          .q-item__label {
+            color: #dddddd;
+          }
+        }
+        @media (prefers-color-scheme: 'light') {
+          background-color: transparent !important;
+          .q-item__label {
+            color: #333333;
+          }
+        }
+      }
+    }
+  }
   .q-page {
     background: white;
-  }
-
-  .q-drawer {
-    @media (prefers-color-scheme: 'light') {
-      background: rgba(255, 255, 255, 0.33);
-    }
-    @media (prefers-color-scheme: 'dark') {
-      background: rgba(0, 0, 0, 0.33);
-    }
   }
 }
