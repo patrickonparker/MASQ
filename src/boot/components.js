@@ -1,4 +1,5 @@
 // import something here
+import Avatar from 'components/Avatar'
 import Button from 'components/Button'
 import Card from 'components/Card'
 import Column from 'components/Column'
@@ -16,6 +17,7 @@ import Space from 'components/Space'
 // "async" is optional
 export default async ({ Vue }) => {
   // something to do
+  Vue.component('Avatar', Avatar)
   Vue.component('Button', Button)
   Vue.component('Card', Card)
   Vue.component('Column', Column)

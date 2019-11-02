@@ -17,7 +17,6 @@
 					})`;
 					let optimized =
 						"https://img2.storyblok.com" + size + smart + quality + img;
-					console.log(optimized);
 					return optimized;
 				} else if (this.blok.src) {
 					return this.blok.src;
