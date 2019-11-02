@@ -11,6 +11,7 @@
 			</q-bar>
 			<q-toolbar :class="!leftDrawer ? 'd-closed' : ''">
 				<q-btn
+					v-if="((app || {}).sidebar || {}).length > 0"
 					flat
 					dense
 					round
@@ -18,14 +19,23 @@
 					icon="mdi-menu"
 					aria-label="Menu"
 				/>
-				<q-toolbar-title>
+				<q-toolbar-title
+					v-if="app.show_page_name_in_toolbar"
+					style="flex: 0 0 auto;"
+				>
 					<portal-target name="header" />
 				</q-toolbar-title>
-				<div>Quasar v{{ $q.version }}</div>
+				<component
+					v-for="blok in (app || {}).toolbar"
+					:key="blok._uid"
+					:is="blok.component"
+					:blok="blok"
+				/>
 			</q-toolbar>
 		</q-header>
 
 		<q-drawer
+			v-if="((app || {}).sidebar || {}).length > 0"
 			v-model="leftDrawer"
 			show-if-above
 			content-class="bg-grey-10"
@@ -33,7 +43,7 @@
 		>
 			<div :style="macApp ? 'height: 32px;' : ''" />
 			<component
-				v-for="blok in (layoutContent || {}).sidebar"
+				v-for="blok in (app || {}).sidebar"
 				:key="blok._uid"
 				:is="blok.component"
 				:blok="blok"
@@ -47,6 +57,7 @@
 
 <script>
 	import StoryblokClient from "storyblok-js-client";
+	import WebFont from "webfontloader";
 	let storyapi = new StoryblokClient({
 		accessToken: process.env.SB_TOKEN
 	});
@@ -55,7 +66,8 @@
 		name: "MyLayout",
 		data() {
 			return {
-				layoutContent: {},
+				app: {},
+				fonts: [],
 				leftDrawer: false
 			};
 		},
@@ -70,7 +82,8 @@
 				return window.matchMedia("(prefers-color-scheme: dark)").matches;
 			},
 			layout() {
-				return this.$q.platform.is.win && this.$q.platform.is.electron
+				return (this.$q.platform.is.win && this.$q.platform.is.electron) ||
+					this.app.full_width_toolbar
 					? "hHh Lpr lFf"
 					: "lHh Lpr lFf";
 			}
@@ -82,14 +95,37 @@
 						version: version
 					})
 					.then(response => {
-						this.layoutContent = response.data.story.content;
+						this.app = response.data.story.content;
+						let googleFonts = response.data.story.content.google_fonts.split(
+							", "
+						);
+						let adobeFonts = response.data.story.content.adobe_edge_web_fonts
+							.split(", ")
+							.join(";");
+						if (googleFonts.length > 0) {
+							WebFont.load({
+								google: {
+									families: googleFonts
+								},
+								timeout: 2000
+							});
+						}
+						if (adobeFonts.length > 0) {
+							WebFont.load({
+								typekit: {
+									id: adobeFonts,
+									api: "//use.edgefonts.net"
+								},
+								timeout: 2000
+							});
+						}
 					})
 					.catch(error => {
 						console.log(error);
 					});
 			},
 			getVersion() {
-				let path = "layout";
+				let path = "settings/layout";
 				if (!this.$q.platform.is.electron && this.$q.platform.within.iframe) {
 					window.storyblok.on("change", () => {
 						this.getStory(path, "draft");

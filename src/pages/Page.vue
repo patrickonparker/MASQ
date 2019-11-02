@@ -1,5 +1,5 @@
 <template>
-	<q-page :class="(page || {}).class" padding>
+	<q-page :class="(page || {}).class" :style="(page || {}).style" padding>
 		<component
 			v-for="blok in (page || {}).body"
 			:key="blok._uid"

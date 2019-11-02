@@ -28,6 +28,7 @@
     "storyblok-vue": "^1.0.5",
     "vue": "^2.6.10",
     "vue-fragment": "^1.5.1",
+    "webfontloader": "^1.6.28",
     "webpack": "^4.41.2"
   },
   "devDependencies": {
