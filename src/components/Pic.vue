@@ -7,11 +7,25 @@
 		props: ["blok"],
 		computed: {
 			dynamic() {
-				if (this.blok.src) {
+				let sbImg = "//a.storyblok.com";
+				if (this.blok.src.includes(sbImg)) {
+					let img = this.blok.src.replace(sbImg, "");
+					let size = `/${this.blok.width}x${this.blok.height}`;
+					let smart = this.blok.smart ? "/smart" : "";
+					let quality = `/filters:quality(${
+						this.blok.quality ? this.blok.quality : "80"
+					})`;
+					let optimized =
+						"https://img2.storyblok.com" + size + smart + quality + img;
+					console.log(optimized);
+					return optimized;
+				} else if (this.blok.src) {
 					return this.blok.src;
 				} else {
 					let random = Math.floor(Math.random() * 1000) + 1;
-					return `https://picsum.photos/600/400?random=${random}`;
+					let width = this.blok.width ? this.blok.width : "600";
+					let height = this.blok.height ? this.blok.height : "400";
+					return `https://picsum.photos/${width}/${height}?random=${random}`;
 				}
 			},
 			ratio() {

@@ -152,7 +152,7 @@ module.exports = function(ctx) {
         // https://www.electron.build/configuration/configuration
         appId: 'masq',
         win: {
-          target: 'portable'
+          target: 'nsis'
         }
       }
     }
