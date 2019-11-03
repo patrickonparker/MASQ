@@ -61,18 +61,7 @@ module.exports = function(ctx) {
       // extractCSS: false,
 
       // https://quasar.dev/quasar-cli/cli-documentation/handling-webpack
-      extendWebpack(cfg) {
-        // copy _redirects file
-        // const CopyWebpackPlugin = require('copy-webpack-plugin')
-        // cfg.plugins.push(
-        //   new CopyWebpackPlugin([
-        //     {
-        //       from: 'src/_redirects',
-        //       to: cfg.output.path
-        //     }
-        //   ])
-        // )
-      }
+      extendWebpack(cfg) {}
     },
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-devServer
