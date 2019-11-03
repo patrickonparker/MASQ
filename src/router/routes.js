@@ -8,6 +8,8 @@ let routes = [
   }
 ]
 
+// GENERATE LINKS (BUT DON'T, USE _REDIRECTS FILE INSTEAD!!!)
+
 // async function getLinks() {
 //   const query = await fetch(
 //     'https://api.storyblok.com/v1/cdn/links?token=BQbCs8YukzGveNbBLlyoSgtt'
@@ -26,7 +28,5 @@ let routes = [
 //     }
 //   }
 // }
-
-// getLinks()
 
 export default routes
