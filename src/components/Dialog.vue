@@ -15,7 +15,7 @@
 				:blok="blok"
 			>
 				<template v-slot:actions>
-					<q-btn @click="open = false" flat color="red">Close</q-btn>
+					<q-btn @click="open = false" flat color="negative">Close</q-btn>
 				</template>
 			</component>
 		</q-dialog>
