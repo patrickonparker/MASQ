@@ -1,5 +1,5 @@
 <template>
-	<q-list v-bind="blok" v-editable="blok">
+	<q-list v-bind="blok" v-editable="blok" dark>
 		<q-item-label header v-if="blok.label">{{ blok.label }}</q-item-label>
 		<component
 			v-for="blok in blok.content"

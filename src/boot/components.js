@@ -1,11 +1,13 @@
 // import something here
 import Avatar from 'components/Avatar'
+import Badge from 'components/Badge'
 import Button from 'components/Button'
 import Card from 'components/Card'
 import Column from 'components/Column'
 import Container from 'components/Container'
 import Dialog from 'components/Dialog'
 import DisplayHelper from 'components/DisplayHelper'
+import Dropdown from 'components/Dropdown'
 import Icon from 'components/Icon'
 import List from 'components/List'
 import ListItem from 'components/ListItem'
@@ -19,12 +21,14 @@ import Space from 'components/Space'
 export default async ({ Vue }) => {
   // something to do
   Vue.component('Avatar', Avatar)
+  Vue.component('Badge', Badge)
   Vue.component('Button', Button)
   Vue.component('Card', Card)
   Vue.component('Column', Column)
   Vue.component('Container', Container)
   Vue.component('Dialog', Dialog)
   Vue.component('DisplayHelper', DisplayHelper)
+  Vue.component('Dropdown', Dropdown)
   Vue.component('Icon', Icon)
   Vue.component('List', List)
   Vue.component('ListItem', ListItem)
