@@ -3,6 +3,8 @@
 		v-bind="blok"
 		:icon="'mdi-' + blok.icon"
 		:no-caps="blok.no_caps"
+		:to="blok.to | linkType"
+		@click="openLink(blok.to)"
 		v-ripple
 	>
 		<component

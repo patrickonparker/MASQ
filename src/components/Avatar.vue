@@ -21,11 +21,6 @@
 <script>
 	export default {
 		props: ["blok"],
-		methods: {
-			check(prop) {
-				return (prop || {}).length > 0;
-			}
-		},
 		computed: {
 			mdi() {
 				return this.check(this.blok.icon) ? "mdi-" + this.blok.icon : "";

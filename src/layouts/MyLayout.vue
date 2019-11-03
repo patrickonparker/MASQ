@@ -11,7 +11,7 @@
 			</q-bar>
 			<q-toolbar :class="!leftDrawer ? 'd-closed' : ''">
 				<q-btn
-					v-if="((app || {}).sidebar || {}).length > 0"
+					v-if="check(app.sidebar)"
 					flat
 					dense
 					round
@@ -35,7 +35,7 @@
 		</q-header>
 
 		<q-drawer
-			v-if="((app || {}).sidebar || {}).length > 0"
+			v-if="check(app.sidebar)"
 			v-model="leftDrawer"
 			show-if-above
 			content-class="bg-grey-10"
@@ -77,9 +77,6 @@
 			},
 			winApp() {
 				return this.$q.platform.is.win && this.$q.platform.is.electron;
-			},
-			darkTheme() {
-				return window.matchMedia("(prefers-color-scheme: dark)").matches;
 			},
 			layout() {
 				return (this.$q.platform.is.win && this.$q.platform.is.electron) ||

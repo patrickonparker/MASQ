@@ -11,11 +11,13 @@ import Dropdown from 'components/Dropdown'
 import Icon from 'components/Icon'
 import List from 'components/List'
 import ListItem from 'components/ListItem'
+import GoogleMap from 'components/GoogleMap'
 import Markdown from 'components/Markdown'
 import Pic from 'components/Pic'
 import PortalVue from 'portal-vue'
 import Row from 'components/Row'
 import Space from 'components/Space'
+import Video from 'components/Video'
 
 // "async" is optional
 export default async ({ Vue }) => {
@@ -32,9 +34,11 @@ export default async ({ Vue }) => {
   Vue.component('Icon', Icon)
   Vue.component('List', List)
   Vue.component('ListItem', ListItem)
+  Vue.component('GoogleMap', GoogleMap)
   Vue.component('Markdown', Markdown)
   Vue.component('Pic', Pic)
   Vue.use(PortalVue)
   Vue.component('Row', Row)
   Vue.component('Space', Space)
+  Vue.component('Video', Video)
 }

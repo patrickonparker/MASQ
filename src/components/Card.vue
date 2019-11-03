@@ -1,5 +1,5 @@
 <template>
-	<q-card v-bind="blok" v-editable="blok" dark>
+	<q-card v-bind="blok" :dark="darkTheme(blok.dark)" v-editable="blok">
 		<component
 			v-for="blok in blok.media"
 			:key="blok._uid"
@@ -7,7 +7,7 @@
 			:blok="blok"
 		/>
 		<q-card-section
-			v-if="blok.content.length > 0"
+			v-if="check(blok.content)"
 			:style="`height: ${blok.content_max_height}px;`"
 			:class="blok.content_max_height ? 'scroll' : ''"
 		>
@@ -19,7 +19,7 @@
 			/>
 		</q-card-section>
 		<q-card-actions
-			v-if="blok.actions.length > 0"
+			v-if="check(blok.actions)"
 			:align="blok.align_actions"
 			:vertical="blok.stack_actions"
 		>
