@@ -1,6 +1,6 @@
-[build]
-  command = "quasar build -m pwa"
-  publish = "dist/pwa"
+# [build]
+#   command = "quasar build -m pwa"
+#   publish = "dist/pwa"
 
 [[redirects]]
   from = "/*"
