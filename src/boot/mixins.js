@@ -14,8 +14,7 @@ export default async ({ Vue }) => {
       },
       openLink(prop) {
         prop.includes('://') ? openURL(prop) : ''
-      },
-      setTheme() {}
+      }
     }
   })
 }
