@@ -64,12 +64,14 @@
 			getVersion() {
 				let path = this.$route.path === "/" ? "home" : this.$route.path;
 				if (!this.$q.platform.is.electron && this.$q.platform.within.iframe) {
-					window.storyblok.on("change", () => {
-						this.getStory(path, "draft");
-					});
-					window.storyblok.pingEditor(() => {
-						if (window.storyblok.isInEditor()) {
+					let storyblok = window.storyblok;
+					storyblok.pingEditor(() => {
+						if (storyblok.isInEditor()) {
 							this.getStory(path, "draft");
+							storyblok.enterEditmode;
+							storyblok.on(["change"], () => {
+								this.getStory(path, "draft");
+							});
 						} else {
 							this.getStory(path, "published");
 						}
