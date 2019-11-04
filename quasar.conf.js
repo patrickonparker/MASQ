@@ -51,6 +51,8 @@ module.exports = function(ctx) {
     // https://quasar.dev/quasar-cli/cli-documentation/supporting-ie
     supportIE: true,
 
+    htmlVariables: { SB_TOKEN: process.env.SB_TOKEN },
+
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
       env: {
