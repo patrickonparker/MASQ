@@ -1,5 +1,25 @@
 @import './typography.scss';
 
+#masq-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #222;
+  @media (prefers-color-scheme: 'light') {
+    background: #eee;
+  }
+  z-index: 99999;
+}
+
+.loaded {
+  display: none !important;
+}
+
 .electron-mac {
   .q-header .q-toolbar {
     transition: 0.1s;

@@ -1,6 +1,9 @@
 <template>
 	<div id="q-app">
 		<router-view />
+		<div id="masq-loader">
+			<q-spinner-bars color="primary" size="4em" />
+		</div>
 	</div>
 </template>
 
@@ -62,6 +65,7 @@
 						let settings = response.data.story.content;
 						this.getFonts(settings);
 						this.setTheme(settings);
+						document.getElementById("masq-loader").className = "loaded";
 					})
 					.catch(error => {
 						console.log(error);
