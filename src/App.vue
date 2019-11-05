@@ -72,6 +72,7 @@
 						let settings = response.data.story.content;
 						this.getFonts(settings);
 						this.setTheme(settings);
+						document.getElementById("masq-loader").className = "loaded";
 					})
 					.catch(error => {
 						console.log(error);
