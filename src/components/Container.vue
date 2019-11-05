@@ -2,8 +2,10 @@
 	<div
 		:class="[
 			'container',
-			`${blok.disable_bottom_margin ? '' : 'standard-margin'}`
+			`${blok.disable_bottom_margin ? '' : 'standard-margin'}`,
+			blok.class
 		]"
+		:style="blok.style"
 		v-editable="blok"
 	>
 		<component
