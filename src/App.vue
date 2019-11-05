@@ -80,7 +80,9 @@
 						let settings = response.data.story.content;
 						this.getFonts(settings);
 						this.setTheme(settings);
-						document.getElementById("masq-loader").className = "loaded";
+						setInterval(() => {
+							document.getElementById("masq-loader").className = "loaded";
+						}, 500);
 					})
 					.catch(error => {
 						console.log(error);
