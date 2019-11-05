@@ -1,5 +1,6 @@
 <template>
 	<div
+		v-if="showOn"
 		:class="[
 			blok.greater_than,
 			blok.less_than,
@@ -19,6 +20,17 @@
 
 <script>
 	export default {
-		props: ["blok"]
+		props: ["blok"],
+		computed: {
+			showOn() {
+				if (this.$route.path.startsWith(this.blok.hide_on_path)) {
+					return false;
+				} else if (!this.$route.path.startsWith(this.blok.only_show_on_path)) {
+					return false;
+				} else {
+					return true;
+				}
+			}
+		}
 	};
 </script>
