@@ -2,7 +2,7 @@
 	<div id="q-app">
 		<router-view />
 		<div id="masq-loader">
-			<q-spinner-bars color="primary" size="4em" />
+			<q-spinner-ball color="primary" size="4em" />
 		</div>
 	</div>
 </template>
@@ -39,6 +39,13 @@
 						timeout: 2000
 					});
 				}
+				let app = document.getElementById("q-app");
+				if ((settings.default_heading_font || {}).length > 0) {
+					app.style.setProperty("--heading-font", settings.default_heading_font);
+				}
+				if ((settings.default_body_font || {}).length > 0) {
+					app.style.setProperty("--body-font", settings.default_body_font);
+				}
 			},
 			setTheme(settings) {
 				let qColors = [
@@ -65,7 +72,6 @@
 						let settings = response.data.story.content;
 						this.getFonts(settings);
 						this.setTheme(settings);
-						document.getElementById("masq-loader").className = "loaded";
 					})
 					.catch(error => {
 						console.log(error);

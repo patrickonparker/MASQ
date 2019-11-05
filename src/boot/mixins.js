@@ -31,6 +31,10 @@ export default async ({ Vue }) => {
             .then(response => {
               this.story = response.data.story
             })
+            .then(
+              (document.getElementById('masq-loader').className =
+                'loaded')
+            )
             .catch(error => {
               console.log(error)
               this.story = '404'
