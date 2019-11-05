@@ -6,34 +6,83 @@
 
 <script>
 	import StoryblokClient from "storyblok-js-client";
+	import WebFont from "webfontloader";
 	import { colors } from "quasar";
-
-	let storyapi = new StoryblokClient({
+	const { setBrand } = colors;
+	const storyapi = new StoryblokClient({
 		accessToken: process.env.SB_TOKEN
 	});
 
 	export default {
 		name: "App",
-		data: () => ({
-			theme: {}
-		}),
 		methods: {
-			async setTheme() {
+			getFonts(settings) {
+				let googleFonts = settings.google_fonts.split(", ");
+				let adobeFonts = settings.adobe_edge_web_fonts.split(", ").join(";");
+				if (googleFonts.length > 0) {
+					WebFont.load({
+						google: {
+							families: googleFonts
+						},
+						timeout: 2000
+					});
+				}
+				if (adobeFonts.length > 0) {
+					WebFont.load({
+						typekit: {
+							id: adobeFonts,
+							api: "//use.edgefonts.net"
+						},
+						timeout: 2000
+					});
+				}
+			},
+			setTheme(settings) {
+				let qColors = [
+					"primary",
+					"secondary",
+					"accent",
+					"positive",
+					"negative",
+					"info",
+					"warning"
+				];
+				for (var i = 0; i < qColors.length; i++) {
+					setBrand(`${qColors[i]}`, settings[`${qColors[i]}`]);
+				}
+			}
+		},
+		async created() {
+			const fetchVersion = async version => {
 				await storyapi
-					.get("cdn/stories/settings/theme", {
-						version: "published"
+					.get("cdn/stories/app/settings", {
+						version: version
 					})
 					.then(response => {
-						this.theme = response.data.story.content;
+						let settings = response.data.story.content;
+						this.getFonts(settings);
+						this.setTheme(settings);
 					})
 					.catch(error => {
 						console.log(error);
 					});
-				colors.setBrand("primary", this.theme.primary);
+			};
+			if (!this.$q.platform.is.electron && this.$q.platform.within.iframe) {
+				let storyblok = window.storyblok;
+				storyblok.pingEditor(() => {
+					if (storyblok.isInEditor()) {
+						fetchVersion("draft");
+						storyblok.enterEditmode;
+						storyblok.on(["change"], () => {
+							fetchVersion("draft");
+						});
+					} else {
+						fetchVersion("published");
+					}
+				});
+			} else {
+				fetchVersion("published");
 			}
-		},
-		created() {
-			this.setTheme();
 		}
 	};
 </script>
