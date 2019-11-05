@@ -60,6 +60,14 @@
 				for (var i = 0; i < qColors.length; i++) {
 					setBrand(`${qColors[i]}`, settings[`${qColors[i]}`]);
 				}
+				console.log(settings.dark_theme);
+				if (settings.dark_theme === "true") {
+					this.$q.dark.set(true);
+				} else if (settings.dark_theme === "auto") {
+					this.$q.dark.set("auto");
+				} else {
+					this.$q.dark.set(false);
+				}
 			}
 		},
 		async created() {
