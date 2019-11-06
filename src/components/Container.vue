@@ -26,10 +26,10 @@
 <style lang="scss" scoped>
 	.container {
 		max-width: 1440px;
+		margin: 0 auto;
 		width: 100%;
 	}
 	.standard-margin {
-		margin: 0 auto;
 		padding-bottom: 45px;
 	}
 </style>
