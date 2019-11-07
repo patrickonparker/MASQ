@@ -14,7 +14,7 @@
 		<portal to="header">
 			{{ story.name }}
 		</portal>
-		<div v-if="story === '404'" class="items-center column text-center">
+		<div v-if="story === '404' && $route !== '/'" class="items-center column text-center">
 			<img
 				src="~assets/404.svg"
 				style="height: 300px; width: 300px; display: block;"
