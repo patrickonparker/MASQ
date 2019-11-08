@@ -28,7 +28,7 @@
       },
       "build": {
         "electron": {
-          "iconHash": "a273dbfab27a9d44e5b6cb9580ddf4c5"
+          "iconHash": "07d00199b82e7d925ad45887cce1912d"
         },
         "cordova": {
           "iconHash": "a273dbfab27a9d44e5b6cb9580ddf4c5",

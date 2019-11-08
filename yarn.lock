@@ -10865,6 +10865,11 @@ vue-magic-grid@^0.0.4:
   resolved "https://registry.yarnpkg.com/vue-magic-grid/-/vue-magic-grid-0.0.4.tgz#4134eab86b429c8a8879e26635720a03ac5ebdca"
   integrity sha512-z/vxnth5gqfT9KKw/wy50GQxK4zazWVavKDzHpcB9jhNfFMTqK4tK08eudaRtDDhfafruQgmy3YDfnaZPhEhdw==
 
+vue-packer@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/vue-packer/-/vue-packer-0.3.0.tgz#0cf4cca57805cab40ffcbd2c56aaf189f76f4ccf"
+  integrity sha512-ceYl5FHH39wb8ibFbQkX9xnvHSjvca8zE2sRpmF9W4Wo9oIHGtl0lRt8O5jGoXvIf1jl0GrJ6yVze5544Z38Uw==
+
 vue-router@3.1.3:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.1.3.tgz#e6b14fabc0c0ee9fda0e2cbbda74b350e28e412b"
