@@ -35,19 +35,19 @@
 
 <style lang="scss">
 	.packer-sizer {
-		width: 100%;
-		width: var(--masonry_xs, 100%);
-		@media (min-width: 800px) {
+		width: 25%;
+		width: var(--masonry_lg, 25%);
+		@media (max-width: 599px) {
+			width: 100%;
+			width: var(--masonry_xs, 100%);
+		}
+		@media (min-width: 600px) and (max-width: 1023px) {
 			width: 50%;
 			width: var(--masonry_sm, 50%);
 		}
-		@media (min-width: 1200px) {
+		@media (min-width: 1024px) and(max-width: 1439px) {
 			width: 33.33%;
-			width: var(--masonry_lg, 33.33%);
-		}
-		@media (min-width: 1600px) {
-			width: 25%;
-			width: var(--masonry_xl, 25%);
+			width: var(--masonry_md, 33.33%);
 		}
 	}
 </style>
