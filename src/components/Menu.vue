@@ -1,12 +1,7 @@
 <template>
-	<q-btn
-		v-bind="blok"
-		:icon="'mdi-' + blok.icon"
-		:no-caps="blok.no_caps"
-		:to="blok.to | linkType"
-		@click="openLink(blok.to)"
-		v-ripple
-		v-editable="blok"
+	<q-menu
+		:fit="blok.fit"
+		:offset="[Number(blok.horizontal_offset), Number(blok.vertical_offset)]"
 	>
 		<component
 			v-for="blok in blok.content"
@@ -14,7 +9,7 @@
 			:is="blok.component"
 			:blok="blok"
 		/>
-	</q-btn>
+	</q-menu>
 </template>
 
 <script>

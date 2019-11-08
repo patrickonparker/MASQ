@@ -7,10 +7,11 @@ import Column from 'components/Column'
 import Container from 'components/Container'
 import Dialog from 'components/Dialog'
 import DisplayHelper from 'components/DisplayHelper'
-import Dropdown from 'components/Dropdown'
+import Menu from 'components/Menu'
 import Icon from 'components/Icon'
 import List from 'components/List'
 import ListItem from 'components/ListItem'
+import Masonry from 'components/Masonry'
 import GoogleMap from 'components/GoogleMap'
 import Markdown from 'components/Markdown'
 import Pic from 'components/Pic'
@@ -30,10 +31,11 @@ export default async ({ Vue }) => {
   Vue.component('Container', Container)
   Vue.component('Dialog', Dialog)
   Vue.component('DisplayHelper', DisplayHelper)
-  Vue.component('Dropdown', Dropdown)
+  Vue.component('Menu', Menu)
   Vue.component('Icon', Icon)
   Vue.component('List', List)
   Vue.component('ListItem', ListItem)
+  Vue.component('Masonry', Masonry)
   Vue.component('GoogleMap', GoogleMap)
   Vue.component('Markdown', Markdown)
   Vue.component('Pic', Pic)

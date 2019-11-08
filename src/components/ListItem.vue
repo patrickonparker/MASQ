@@ -5,6 +5,7 @@
 		:to="blok.to | linkType"
 		@click="openLink(blok.to)"
 		v-ripple
+		v-editable="blok"
 	>
 		<q-item-section avatar v-if="check(blok.avatar)">
 			<component

@@ -6,6 +6,7 @@
 			:is="blok.component"
 			:blok="blok"
 		/>
+		<q-separator v-if="check(blok.media)"></q-separator>
 		<q-card-section
 			v-if="check(blok.content)"
 			:style="`height: ${blok.content_max_height}px;`"

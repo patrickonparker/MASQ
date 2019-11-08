@@ -11,6 +11,7 @@
 	import StoryblokClient from "storyblok-js-client";
 	import WebFont from "webfontloader";
 	import { colors } from "quasar";
+	import cssVars from "css-vars-ponyfill";
 	const { setBrand } = colors;
 	const storyapi = new StoryblokClient({
 		accessToken: process.env.SB_TOKEN
@@ -57,10 +58,11 @@
 					"info",
 					"warning"
 				];
+				let ponyfillColors = {};
 				for (var i = 0; i < qColors.length; i++) {
 					setBrand(`${qColors[i]}`, settings[`${qColors[i]}`]);
+					ponyfillColors[`--q-color-${qColors[i]}`] = settings[`${qColors[i]}`];
 				}
-				console.log(settings.dark_theme);
 				if (settings.dark_theme === "true") {
 					this.$q.dark.set(true);
 				} else if (settings.dark_theme === "auto") {
@@ -68,6 +70,10 @@
 				} else {
 					this.$q.dark.set(false);
 				}
+				cssVars({
+					// Options...
+					variables: ponyfillColors
+				});
 			}
 		},
 		async created() {

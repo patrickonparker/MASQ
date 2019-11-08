@@ -4,6 +4,7 @@ import StoryblokClient from 'storyblok-js-client'
 let storyapi = new StoryblokClient({
   accessToken: process.env.SB_TOKEN
 })
+let storyblok = window.storyblok
 
 // "async" is optional
 export default async ({ Vue }) => {
@@ -19,7 +20,12 @@ export default async ({ Vue }) => {
       },
 
       openLink(prop) {
-        prop.includes('://') ? openURL(prop) : ''
+        storyblok.pingEditor(() => {
+          if (storyblok.inEditor) {
+          } else {
+            prop.includes('://') ? openURL(prop) : ''
+          }
+        })
       },
 
       getStory(path) {
@@ -41,9 +47,9 @@ export default async ({ Vue }) => {
           !this.$q.platform.is.electron &&
           this.$q.platform.within.iframe
         ) {
-          let storyblok = window.storyblok
           storyblok.pingEditor(() => {
-            if (storyblok.isInEditor()) {
+            if (storyblok.inEditor) {
+              // console.log(storyblok.inEditor)
               fetchVersion('draft')
               storyblok.enterEditmode
               storyblok.on(['change'], () => {
