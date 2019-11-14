@@ -4,6 +4,7 @@
 		<div id="masq-loader">
 			<q-spinner-ball color="primary" size="4em" />
 		</div>
+		<div v-html="css"></div>
 	</div>
 </template>
 
@@ -20,10 +21,13 @@
 
 	export default {
 		name: "App",
+		data: () => ({
+			css: {}
+		}),
 		methods: {
-			getFonts(settings) {
-				let googleFonts = settings.google_fonts.split(", ");
-				let adobeFonts = settings.adobe_edge_web_fonts.split(", ").join(";");
+			getFonts(theme) {
+				let googleFonts = theme.google_fonts.split(", ");
+				let adobeFonts = theme.adobe_edge_web_fonts.split(", ").join(";");
 				if (googleFonts.length > 0) {
 					WebFont.load({
 						google: {
@@ -42,14 +46,14 @@
 					});
 				}
 				let app = document.getElementById("q-app");
-				if ((settings.default_heading_font || {}).length > 0) {
-					app.style.setProperty("--heading-font", settings.default_heading_font);
+				if ((theme.default_heading_font || {}).length > 0) {
+					app.style.setProperty("--heading-font", theme.default_heading_font);
 				}
-				if ((settings.default_body_font || {}).length > 0) {
-					app.style.setProperty("--body-font", settings.default_body_font);
+				if ((theme.default_body_font || {}).length > 0) {
+					app.style.setProperty("--body-font", theme.default_body_font);
 				}
 			},
-			setTheme(settings) {
+			setTheme(theme) {
 				let qColors = [
 					"primary",
 					"secondary",
@@ -62,16 +66,16 @@
 				let qBreakpoints = ["xs", "sm", "md", "lg"];
 				let ponyFill = {};
 				for (var i = 0; i < qColors.length; i++) {
-					setBrand(`${qColors[i]}`, settings[`${qColors[i]}`]);
-					ponyFill[`--q-color-${qColors[i]}`] = settings[`${qColors[i]}`];
+					setBrand(`${qColors[i]}`, theme[`${qColors[i]}`]);
+					ponyFill[`--q-color-${qColors[i]}`] = theme[`${qColors[i]}`];
 				}
 				for (var i = 0; i < qBreakpoints.length; i++) {
 					ponyFill[`--masonry_${qBreakpoints[i]}`] =
-						settings[`masonry_${qBreakpoints[i]}`];
+						theme[`masonry_${qBreakpoints[i]}`];
 				}
-				if (settings.dark_theme === "true") {
+				if (theme.dark_theme === "true") {
 					this.$q.dark.set(true);
-				} else if (settings.dark_theme === "auto") {
+				} else if (theme.dark_theme === "auto") {
 					this.$q.dark.set("auto");
 				} else {
 					this.$q.dark.set(false);
@@ -85,13 +89,14 @@
 		async created() {
 			const fetchVersion = async version => {
 				await storyapi
-					.get("cdn/stories/app/settings", {
+					.get("cdn/stories/settings/theme", {
 						version: version
 					})
 					.then(response => {
-						let settings = response.data.story.content;
-						this.getFonts(settings);
-						this.setTheme(settings);
+						let theme = response.data.story.content;
+						this.getFonts(theme);
+						this.setTheme(theme);
+						this.css = response.data.story.content.css;
 						setInterval(() => {
 							document.getElementById("masq-loader").className = "loaded";
 						}, 500);

@@ -43,7 +43,7 @@
 		}),
 		computed: {
 			path() {
-				let paths = ["/", "/app", "/app/layout", "/app/settings"];
+				let paths = ["/", "/settings", "/settings/layout", "/settings/theme"];
 				return paths.includes(this.$route.path) ? "home" : this.$route.path;
 			}
 		},

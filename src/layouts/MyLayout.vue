@@ -65,7 +65,7 @@
 			};
 		},
 		created() {
-			this.getStory("/app/layout");
+			this.getStory("/settings/layout");
 		},
 		computed: {
 			content() {
