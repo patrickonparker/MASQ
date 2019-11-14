@@ -5,7 +5,6 @@
 			:key="blok._uid"
 			:is="blok.component"
 			:blok="blok"
-			v-editable="blok"
 		/>
 	</div>
 </template>

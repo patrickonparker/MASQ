@@ -20,6 +20,7 @@ import PortalVue from 'portal-vue'
 import Ribbon from 'components/Ribbon'
 import Row from 'components/Row'
 import Space from 'components/Space'
+import Toolbar from 'components/Toolbar'
 import Video from 'components/Video'
 
 // "async" is optional
@@ -46,5 +47,6 @@ export default async ({ Vue }) => {
   Vue.component('Ribbon', Ribbon)
   Vue.component('Row', Row)
   Vue.component('Space', Space)
+  Vue.component('Toolbar', Toolbar)
   Vue.component('Video', Video)
 }
