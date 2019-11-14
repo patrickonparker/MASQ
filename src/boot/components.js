@@ -7,6 +7,7 @@ import Column from 'components/Column'
 import Container from 'components/Container'
 import Dialog from 'components/Dialog'
 import DisplayHelper from 'components/DisplayHelper'
+import ExpansionItem from 'components/ExpansionItem'
 import Menu from 'components/Menu'
 import Icon from 'components/Icon'
 import List from 'components/List'
@@ -16,6 +17,7 @@ import GoogleMap from 'components/GoogleMap'
 import Markdown from 'components/Markdown'
 import Pic from 'components/Pic'
 import PortalVue from 'portal-vue'
+import Ribbon from 'components/Ribbon'
 import Row from 'components/Row'
 import Space from 'components/Space'
 import Video from 'components/Video'
@@ -31,6 +33,7 @@ export default async ({ Vue }) => {
   Vue.component('Container', Container)
   Vue.component('Dialog', Dialog)
   Vue.component('DisplayHelper', DisplayHelper)
+  Vue.component('ExpansionItem', ExpansionItem)
   Vue.component('Menu', Menu)
   Vue.component('Icon', Icon)
   Vue.component('List', List)
@@ -40,6 +43,7 @@ export default async ({ Vue }) => {
   Vue.component('Markdown', Markdown)
   Vue.component('Pic', Pic)
   Vue.use(PortalVue)
+  Vue.component('Ribbon', Ribbon)
   Vue.component('Row', Row)
   Vue.component('Space', Space)
   Vue.component('Video', Video)

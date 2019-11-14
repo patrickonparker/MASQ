@@ -28,6 +28,10 @@ export default async ({ Vue }) => {
         })
       },
 
+      mdi(prop) {
+        return this.check(prop) ? 'mdi-' + prop : ''
+      },
+
       getStory(path) {
         const fetchVersion = async version => {
           await storyapi

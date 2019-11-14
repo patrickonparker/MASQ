@@ -3,7 +3,7 @@
 		v-bind="blok"
 		:color="check(blok.picture) ? '' : blok.color"
 		:font-size="blok.font_size"
-		:icon="check(blok.picture) ? '' : mdi"
+		:icon="check(blok.picture) ? '' : icon"
 		:rounded="blok.shape === 'rounded'"
 		:square="blok.shape === 'square'"
 		:text-color="blok.text_color"
@@ -22,8 +22,8 @@
 	export default {
 		props: ["blok"],
 		computed: {
-			mdi() {
-				return this.check(this.blok.icon) ? "mdi-" + this.blok.icon : "";
+			icon() {
+				return this.mdi(this.blok.icon);
 			}
 		}
 	};

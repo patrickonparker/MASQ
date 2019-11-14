@@ -1277,6 +1277,13 @@
     raw-loader "^3.1.0"
     ware-loader "^0.2.4"
 
+"@quasar/quasar-app-extension-qribbon@^1.0.0-beta.8":
+  version "1.0.0-beta.8"
+  resolved "https://registry.yarnpkg.com/@quasar/quasar-app-extension-qribbon/-/quasar-app-extension-qribbon-1.0.0-beta.8.tgz#cd1c40179867fcdab8fed6398321072dca6a01cd"
+  integrity sha512-QuHZu+91pDWHdl71lprcq9KJ21HNTl56CEmoCUjkhcqWEwLmrfh/eQ5Ow/jd4FKEF7wyJyzzmU5T/QfF79/PSA==
+  dependencies:
+    q-colorize-mixin "^1.0.0-alpha.3"
+
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
@@ -8747,6 +8754,11 @@ punycode@^2.1.0:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
+q-colorize-mixin@^1.0.0-alpha.3:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/q-colorize-mixin/-/q-colorize-mixin-1.0.0.tgz#679135d5a617e9049e8d254bf94243e90eb04ddf"
+  integrity sha512-sve33D6BdRYWn2bGe+xY1yGzhXGYrkkSXA+To96y1a2b/wMirOc5cLELH3uyvV8Qk/TM6mrLUapMypF0xZyKgg==
+
 q@^1.1.2:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/q/-/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
@@ -10859,11 +10871,6 @@ vue-loader@15.7.1:
     loader-utils "^1.1.0"
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
-
-vue-magic-grid@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/vue-magic-grid/-/vue-magic-grid-0.0.4.tgz#4134eab86b429c8a8879e26635720a03ac5ebdca"
-  integrity sha512-z/vxnth5gqfT9KKw/wy50GQxK4zazWVavKDzHpcB9jhNfFMTqK4tK08eudaRtDDhfafruQgmy3YDfnaZPhEhdw==
 
 vue-packer@^0.3.0:
   version "0.3.0"

@@ -1,11 +1,10 @@
 <template>
-	<q-btn
+	<q-expansion-item
 		v-bind="blok"
+		:expand-icon="expandIcon"
+		:header-class="blok.class"
+		:header-style="blok.style"
 		:icon="icon"
-		:no-caps="blok.no_caps"
-		:to="blok.to | linkType"
-		@click="openLink(blok.to)"
-		v-ripple
 		v-editable="blok"
 	>
 		<component
@@ -14,7 +13,7 @@
 			:is="blok.component"
 			:blok="blok"
 		/>
-	</q-btn>
+	</q-expansion-item>
 </template>
 
 <script>
@@ -23,6 +22,9 @@
 		computed: {
 			icon() {
 				return this.mdi(this.blok.icon);
+			},
+			expandIcon() {
+				return this.mdi(this.blok.expand_icon);
 			}
 		}
 	};
