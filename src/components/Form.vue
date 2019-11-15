@@ -5,7 +5,7 @@
 		class="q-gutter-md"
 		name="testform12784"
 		data-netlify="true"
-		method="post"
+		method="POST"
 	>
 		<q-input
 			filled
