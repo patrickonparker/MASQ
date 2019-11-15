@@ -1,9 +1,9 @@
 <template>
-	<form class="q-gutter-md" name="testform12784" netlify method="POST">
+	<form class="q-gutter-md" name="contact" data-netlify="true">
 		<q-input
 			filled
 			v-model="name"
-			name="name"
+			name="Name"
 			label="Your name *"
 			hint="Name and surname"
 			lazy-rules
@@ -14,7 +14,7 @@
 			filled
 			type="number"
 			v-model="age"
-			name="age"
+			name="Age"
 			label="Your age *"
 			lazy-rules
 			:rules="[
@@ -23,8 +23,16 @@
 			]"
 		/>
 
+		<input type="hidden" name="_next" value="http://localhost:8080/dogs" />
+
+		<input type="hidden" name="_subject" value="New submission from MASQ!" />
+
+		<input type="text" name="_honey" style="display:none" />
+
+		<!-- <input type="hidden" name="_captcha" value="false" /> -->
+
 		<div>
-			<q-btn label="Submit" type="submit" color="primary" />
+			<q-btn label="Submit" type="submit" color="primary" @click="recaptcha" />
 			<q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
 		</div>
 	</form>
@@ -36,7 +44,8 @@
 			return {
 				name: null,
 				age: null,
-				accept: false
+				accept: false,
+				disabled: true
 			};
 		},
 
