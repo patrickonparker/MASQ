@@ -6,7 +6,7 @@
 			:is="blok.component"
 			:blok="blok"
 		/>
-		<q-separator v-if="check(blok.media)"></q-separator>
+		<q-separator v-if="check(blok.media) && check(blok.content)"></q-separator>
 		<q-card-section
 			v-if="check(blok.content)"
 			:style="`height: ${blok.content_max_height}px;`"
@@ -19,6 +19,7 @@
 				:blok="blok"
 			/>
 		</q-card-section>
+		<q-separator v-if="blok.separate_actions"></q-separator>
 		<q-card-actions
 			v-if="check(blok.actions)"
 			:align="blok.align_actions"
