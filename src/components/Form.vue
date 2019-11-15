@@ -1,27 +1,46 @@
 <template>
-	<form name="contact" method="POST" data-netlify="true">
-		<p>
-			<label>Your Name: <input type="text" name="name"/></label>
-		</p>
-		<p>
-			<label>Your Email: <input type="email" name="email"/></label>
-		</p>
-		<p>
-			<label
-				>Your Role:
-				<select name="role[]" multiple>
-					<option value="leader">Leader</option>
-					<option value="follower">Follower</option>
-				</select></label
-			>
-		</p>
-		<p>
-			<label>Message: <textarea name="message"></textarea></label>
-		</p>
-		<p>
-			<button type="submit">Send</button>
-		</p>
-	</form>
+	<q-form
+		@submit="onSubmit"
+		@reset="onReset"
+		class="q-gutter-md"
+		name="testform12784"
+		action="https://formsubmit.co/lovallo.james@email.com"
+		method="POST"
+	>
+		<q-input
+			filled
+			v-model="name"
+			name="name"
+			label="Your name *"
+			hint="Name and surname"
+			lazy-rules
+			:rules="[val => (val && val.length > 0) || 'Please type something']"
+		/>
+
+		<q-input
+			filled
+			type="number"
+			v-model="age"
+			name="age"
+			label="Your age *"
+			lazy-rules
+			:rules="[
+				val => (val !== null && val !== '') || 'Please type your age',
+				val => (val > 0 && val < 100) || 'Please type a real age'
+			]"
+		/>
+
+		<q-toggle
+			v-model="accept"
+			label="I accept the license and terms"
+			name="termsf"
+		/>
+
+		<div>
+			<q-btn label="Submit" type="submit" color="primary" />
+			<q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
+		</div>
+	</q-form>
 </template>
 
 <script>
