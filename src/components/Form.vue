@@ -4,7 +4,7 @@
 		@reset="onReset"
 		class="q-gutter-md"
 		name="testform12784"
-		:data-netlify="true"
+		data-netlify="true"
 		method="post"
 	>
 		<q-input
@@ -49,7 +49,6 @@
 			return {
 				name: null,
 				age: null,
-
 				accept: false
 			};
 		},
@@ -81,6 +80,3 @@
 		}
 	};
 </script>
-
-<style>
-</style>
