@@ -3,8 +3,9 @@
 		@submit="onSubmit"
 		@reset="onReset"
 		class="q-gutter-md"
-		name="test"
-		netlify="true"
+		name="testform12784"
+		:data-netlify="true"
+		method="post"
 	>
 		<q-input
 			filled
