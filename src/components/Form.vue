@@ -1,5 +1,5 @@
 <template>
-	<form class="q-gutter-md" name="contact" data-netlify="true">
+	<form class="q-gutter-md" name="contact" method="POST" data-netlify="true">
 		<q-input
 			filled
 			v-model="name"
