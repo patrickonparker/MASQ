@@ -16,7 +16,8 @@
     "Dev_iOS": "netlify dev -c 'quasar d -m ios'",
     "Prod_iOS": "netlify dev -c 'quasar b -m ios'",
     "Dev_Android": "netlify dev -c 'quasar d -m android'",
-    "Prod_Android": "netlify dev -c 'quasar b -m android'"
+    "Prod_Android": "netlify dev -c 'quasar b -m android'",
+    "Publish_PWA": "netlify dev -c 'quasar b -m pwa' && netlify deploy -p"
   },
   "dependencies": {
     "@quasar/extras": "^1.3.2",

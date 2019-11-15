@@ -1,11 +1,26 @@
 <template>
-	<form class="q-gutter-md" name="contact" method="POST" data-netlify="true">
+	<form
+		class="q-gutter-md"
+		name="testform12784"
+		action="https://formsubmit.co/lovallo.james@gmail.com"
+		method="POST"
+	>
 		<q-input
 			filled
 			v-model="name"
 			name="Name"
 			label="Your name *"
 			hint="Name and surname"
+			lazy-rules
+			:rules="[val => (val && val.length > 0) || 'Please type something']"
+		/>
+
+		<q-input
+			filled
+			v-model="name"
+			name="Occupation"
+			label="Your occupation *"
+			hint="What you do for a living"
 			lazy-rules
 			:rules="[val => (val && val.length > 0) || 'Please type something']"
 		/>
