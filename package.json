@@ -8,16 +8,16 @@
   "author": "James Lovallo <patrickonparker@gmail.com>",
   "private": true,
   "scripts": {
-    "Dev": "netlify dev -c 'quasar d'",
-    "Dev_PWA": "netlify dev -c 'quasar d -m pwa'",
-    "Prod_PWA": "netlify dev -c 'quasar b -m pwa'",
-    "Dev_Electron": "netlify dev -c 'quasar d -m electron'",
-    "Prod_Electron": "netlify dev -c 'quasar b -m electron'",
-    "Dev_iOS": "netlify dev -c 'quasar d -m ios'",
-    "Prod_iOS": "netlify dev -c 'quasar b -m ios'",
-    "Dev_Android": "netlify dev -c 'quasar d -m android'",
-    "Prod_Android": "netlify dev -c 'quasar b -m android'",
-    "Publish_PWA": "netlify dev -c 'quasar b -m pwa' && netlify deploy -p"
+    "▶️__Start_Dev_Server": "netlify dev -c 'quasar d'",
+    "W__PWA__Dev": "netlify dev -c 'quasar d -m pwa'",
+    "W__PWA__Production": "netlify dev -c 'quasar b -m pwa'",
+    "W__PWA__Publish_to_Netlify": "netlify dev -c 'quasar b -m pwa' && netlify deploy -p",
+    "D__Electron__Dev": "netlify dev -c 'quasar d -m electron'",
+    "D__Electron__Production": "netlify dev -c 'quasar b -m electron'",
+    "M__iOS__Dev": "netlify dev -c 'quasar d -m ios'",
+    "M__iOS__Production": "netlify dev -c 'quasar b -m ios'",
+    "M__Android__Dev": "netlify dev -c 'quasar d -m android'",
+    "M__Android__Production": "netlify dev -c 'quasar b -m android'"
   },
   "dependencies": {
     "@quasar/extras": "^1.3.3",
