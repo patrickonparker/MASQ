@@ -8,13 +8,14 @@ import Container from 'components/Container'
 import Dialog from 'components/Dialog'
 import DisplayHelper from 'components/DisplayHelper'
 import ExpansionItem from 'components/ExpansionItem'
-import Menu from 'components/Menu'
+import Form from 'components/Form'
+import GoogleMap from 'components/GoogleMap'
 import Icon from 'components/Icon'
 import List from 'components/List'
 import ListItem from 'components/ListItem'
-import Masonry from 'components/Masonry'
-import GoogleMap from 'components/GoogleMap'
 import Markdown from 'components/Markdown'
+import Masonry from 'components/Masonry'
+import Menu from 'components/Menu'
 import Pic from 'components/Pic'
 import PortalVue from 'portal-vue'
 import Ribbon from 'components/Ribbon'
@@ -35,18 +36,19 @@ export default async ({ Vue }) => {
   Vue.component('Dialog', Dialog)
   Vue.component('DisplayHelper', DisplayHelper)
   Vue.component('ExpansionItem', ExpansionItem)
-  Vue.component('Menu', Menu)
+  Vue.component('Form', Form)
+  Vue.component('GoogleMap', GoogleMap)
   Vue.component('Icon', Icon)
   Vue.component('List', List)
   Vue.component('ListItem', ListItem)
-  Vue.component('Masonry', Masonry)
-  Vue.component('GoogleMap', GoogleMap)
   Vue.component('Markdown', Markdown)
+  Vue.component('Masonry', Masonry)
+  Vue.component('Menu', Menu)
   Vue.component('Pic', Pic)
-  Vue.use(PortalVue)
   Vue.component('Ribbon', Ribbon)
   Vue.component('Row', Row)
   Vue.component('Space', Space)
   Vue.component('Toolbar', Toolbar)
   Vue.component('Video', Video)
+  Vue.use(PortalVue)
 }
