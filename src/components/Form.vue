@@ -4,7 +4,7 @@
 		@reset="onReset"
 		class="q-gutter-md"
 		name="testform12784"
-		action="https://formsubmit.co/lovallo.james@email.com"
+		action="https://formsubmit.co/lovallo.james@gmail.com"
 		method="POST"
 	>
 		<q-input
