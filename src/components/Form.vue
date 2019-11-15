@@ -4,7 +4,7 @@
 		@reset="onReset"
 		class="q-gutter-md"
 		name="test"
-		netlify
+		netlify="true"
 	>
 		<q-input
 			filled
