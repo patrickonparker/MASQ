@@ -1,11 +1,5 @@
 <template>
-	<q-form
-		@reset="onReset"
-		class="q-gutter-md"
-		name="testform12784"
-		action="https://formsubmit.co/lovallo.james@gmail.com"
-		method="POST"
-	>
+	<form class="q-gutter-md" name="testform12784" netlify method="POST">
 		<q-input
 			filled
 			v-model="name"
@@ -29,17 +23,11 @@
 			]"
 		/>
 
-		<q-toggle
-			v-model="accept"
-			label="I accept the license and terms"
-			name="termsf"
-		/>
-
 		<div>
 			<q-btn label="Submit" type="submit" color="primary" />
 			<q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
 		</div>
-	</q-form>
+	</form>
 </template>
 
 <script>
