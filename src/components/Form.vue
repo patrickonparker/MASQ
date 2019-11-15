@@ -1,6 +1,5 @@
 <template>
 	<q-form
-		@submit="onSubmit"
 		@reset="onReset"
 		class="q-gutter-md"
 		name="testform12784"
