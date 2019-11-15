@@ -1,5 +1,5 @@
 <template>
-	<vue-packer :style="`margin: -${gutter}`">
+	<vue-packer :style="`margin: -${gutter}`" v-editable="blok">
 		<div
 			v-for="blok in blok.content"
 			:key="blok._uid"

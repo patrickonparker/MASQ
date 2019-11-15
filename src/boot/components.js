@@ -3,6 +3,7 @@ import Avatar from 'components/Avatar'
 import Badge from 'components/Badge'
 import Button from 'components/Button'
 import Card from 'components/Card'
+import Carousel3D from 'components/Carousel3D'
 import Column from 'components/Column'
 import Container from 'components/Container'
 import Dialog from 'components/Dialog'
@@ -31,6 +32,7 @@ export default async ({ Vue }) => {
   Vue.component('Badge', Badge)
   Vue.component('Button', Button)
   Vue.component('Card', Card)
+  Vue.component('Carousel3D', Carousel3D)
   Vue.component('Column', Column)
   Vue.component('Container', Container)
   Vue.component('Dialog', Dialog)

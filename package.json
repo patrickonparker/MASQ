@@ -29,6 +29,7 @@
     "storyblok-js-client": "^2.0.10",
     "storyblok-vue": "^1.0.5",
     "vue": "^2.6.10",
+    "vue-carousel-3d": "^0.2.0",
     "vue-fragment": "^1.5.1",
     "vue-packer": "^0.3.0",
     "webfontloader": "^1.6.28",

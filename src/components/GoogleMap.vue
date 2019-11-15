@@ -11,7 +11,7 @@
 		frameborder="0"
 		scrolling="no"
 		:class="blok.class"
-		:style="blok.style"
+		:style="'display: block;' + blok.style"
 	></iframe>
 </template>
 
