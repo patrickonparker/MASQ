@@ -112,6 +112,7 @@
 				/>
 			</template>
 		</q-select>
+		<input type="hidden" :name="blok.label" :value="value" />
 	</Fragment>
 </template>
 
