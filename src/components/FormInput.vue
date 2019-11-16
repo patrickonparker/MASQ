@@ -89,6 +89,29 @@
 				/>
 			</template>
 		</q-input>
+		<q-select
+			v-if="blok.type && blok.type === 'select'"
+			v-bind="blok"
+			v-model="value"
+			:options="blok.options.split(',')"
+			:name="blok.label"
+			clearable
+			clear-icon="mdi-close"
+			dropdown-icon="mdi-menu-down"
+			hide-bottom-space
+			:multiple="blok.multiple_values"
+			no-error-icon
+			:rules="blok.required ? [val => !!val || 'Field is required'] : ''"
+		>
+			<template v-slot:prepend v-if="check(blok.icon)">
+				<component
+					v-for="blok in blok.icon"
+					:key="blok._uid"
+					:is="blok.component"
+					:blok="blok"
+				/>
+			</template>
+		</q-select>
 	</Fragment>
 </template>
 
