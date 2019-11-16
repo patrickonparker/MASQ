@@ -10,6 +10,7 @@ import Dialog from 'components/Dialog'
 import DisplayHelper from 'components/DisplayHelper'
 import ExpansionItem from 'components/ExpansionItem'
 import Form from 'components/Form'
+import FormInput from 'components/FormInput'
 import GoogleMap from 'components/GoogleMap'
 import Icon from 'components/Icon'
 import List from 'components/List'
@@ -39,6 +40,7 @@ export default async ({ Vue }) => {
   Vue.component('DisplayHelper', DisplayHelper)
   Vue.component('ExpansionItem', ExpansionItem)
   Vue.component('Form', Form)
+  Vue.component('FormInput', FormInput)
   Vue.component('GoogleMap', GoogleMap)
   Vue.component('Icon', Icon)
   Vue.component('List', List)
