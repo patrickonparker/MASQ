@@ -177,6 +177,7 @@
 				:color="blok.color"
 			/>
 		</div>
+
 		<!-- toggle -->
 		<div
 			v-if="blok.type === 'toggle'"
@@ -202,6 +203,7 @@
 				:color="blok.color"
 			/>
 		</div>
+
 		<!-- date/time -->
 		<q-input
 			v-if="blok.type === 'date/time'"
