@@ -7,7 +7,7 @@
       "background_color": "#ffffff",
       "splashscreen_type": "generate"
     },
-    "build_always": false,
+    "build_always": true,
     "__internal": {
       "dev": {
         "cordova": {
@@ -17,7 +17,7 @@
           "backgroundColor": "#ffffff"
         },
         "electron": {
-          "iconHash": "791608c8c528b31af1057f7a435e03fe"
+          "iconHash": "07d00199b82e7d925ad45887cce1912d"
         },
         "spa": {
           "iconHash": "07d00199b82e7d925ad45887cce1912d"
@@ -28,7 +28,7 @@
       },
       "build": {
         "electron": {
-          "iconHash": "791608c8c528b31af1057f7a435e03fe"
+          "iconHash": "07d00199b82e7d925ad45887cce1912d"
         },
         "cordova": {
           "iconHash": "a273dbfab27a9d44e5b6cb9580ddf4c5",
