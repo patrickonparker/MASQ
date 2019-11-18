@@ -17,7 +17,7 @@
           "backgroundColor": "#ffffff"
         },
         "electron": {
-          "iconHash": "a273dbfab27a9d44e5b6cb9580ddf4c5"
+          "iconHash": "791608c8c528b31af1057f7a435e03fe"
         },
         "spa": {
           "iconHash": "07d00199b82e7d925ad45887cce1912d"
@@ -28,7 +28,7 @@
       },
       "build": {
         "electron": {
-          "iconHash": "07d00199b82e7d925ad45887cce1912d"
+          "iconHash": "791608c8c528b31af1057f7a435e03fe"
         },
         "cordova": {
           "iconHash": "a273dbfab27a9d44e5b6cb9580ddf4c5",

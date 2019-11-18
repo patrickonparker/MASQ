@@ -25,7 +25,7 @@ module.exports = function(ctx) {
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
     framework: {
-      iconSet: 'mdi-v4', // Quasar icon set
+      // iconSet: 'ionicons-v4', // Quasar icon set
       // lang: 'de', // Quasar language pack
 
       // Possible values for "all":
@@ -67,7 +67,33 @@ module.exports = function(ctx) {
       // extractCSS: false,
 
       // https://quasar.dev/quasar-cli/cli-documentation/handling-webpack
-      extendWebpack(cfg) {}
+      extendWebpack(cfg) {
+        var fs = require('fs'),
+          request = require('request')
+
+        var download = function(uri, filename, callback) {
+          request.head(uri, function(err, res, body) {
+            console.log(
+              'content-type:',
+              res.headers['content-type']
+            )
+            console.log(
+              'content-length:',
+              res.headers['content-length']
+            )
+
+            request(uri)
+              .pipe(fs.createWriteStream(filename))
+              .on('close', callback)
+          })
+        }
+
+        const icon = process.env.APP_ICON
+        // console.log(icon)
+        download(icon, 'app-icon.png', function() {
+          console.log('Fetched icon:', icon)
+        })
+      }
     },
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-devServer
