@@ -7,6 +7,7 @@
 		:icon="icon"
 		v-editable="blok"
 	>
+		<q-separator />
 		<component
 			v-for="blok in blok.content"
 			:key="blok._uid"
