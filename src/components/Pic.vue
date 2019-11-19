@@ -1,5 +1,12 @@
 <template>
-	<q-img v-bind="blok" :src="dynamic" :ratio="ratio" v-editable="blok" />
+	<q-img v-bind="blok" :src="dynamic" :ratio="ratio" v-editable="blok">
+		<component
+			v-for="blok in blok.content"
+			:key="blok._uid"
+			:is="blok.component"
+			:blok="blok"
+		/>
+	</q-img>
 </template>
 
 <script>
