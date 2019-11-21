@@ -8,16 +8,18 @@
   "author": "James Lovallo <patrickonparker@gmail.com>",
   "private": true,
   "scripts": {
-    "▶️__Start_Dev_Server": "netlify dev -c 'quasar d'",
-    "W__PWA__Dev": "netlify dev -c 'quasar d -m pwa'",
-    "W__PWA__Production": "netlify dev -c 'quasar b -m pwa'",
-    "W__PWA__Publish_to_Netlify": "netlify dev -c 'quasar b -m pwa' && netlify deploy -p",
-    "D__Electron__Dev": "netlify dev -c 'quasar d -m electron'",
-    "D__Electron__Production": "netlify dev -c 'quasar b -m electron'",
-    "M__iOS__Dev": "netlify dev -c 'quasar d -m ios'",
-    "M__iOS__Production": "netlify dev -c 'quasar b -m ios'",
-    "M__Android__Dev": "netlify dev -c 'quasar d -m android'",
-    "M__Android__Production": "netlify dev -c 'quasar b -m android'"
+    "↻⠀Switch Projects": "netlify unlink && netlify link && netlify dev -c 'node icon.js'",
+    "▲⠀Publish⠀to⠀Netlify": "netlify dev -c 'quasar b -m pwa' && netlify deploy -p",
+    "▶⠀Start⠀Dev⠀Server": "netlify dev -c 'quasar d'",
+    "⠀⠀├⠀Platforms": "",
+    "⠀⠀⠀⠀├⠀Dev:⠀PWA": "netlify dev -c 'quasar d -m pwa'",
+    "⠀⠀⠀⠀├⠀Build:⠀PWA": "netlify dev -c 'quasar b -m pwa'",
+    "⠀⠀⠀⠀├⠀Dev:⠀Electron": "netlify dev -c 'quasar d -m electron'",
+    "⠀⠀⠀⠀├⠀Build:⠀Electron": "netlify dev -c 'quasar b -m electron'",
+    "⠀⠀⠀⠀├⠀Dev:⠀iOS": "netlify dev -c 'quasar d -m ios'",
+    "⠀⠀⠀⠀├⠀Build:⠀iOS": "netlify dev -c 'quasar b -m ios'",
+    "⠀⠀⠀⠀├⠀Dev:⠀Android": "netlify dev -c 'quasar d -m android'",
+    "⠀⠀⠀⠀├⠀Build:⠀Android": "netlify dev -c 'quasar b -m android'"
   },
   "dependencies": {
     "@quasar/extras": "^1.3.3",
