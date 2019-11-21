@@ -4,7 +4,7 @@
 		:inset-level="Number(blok.inset_level)"
 		:to="blok.to | linkType"
 		@click="openLink(blok.to)"
-		v-ripple
+		ripple
 		v-editable="blok"
 	>
 		<q-item-section avatar v-if="check(blok.avatar)">

@@ -28,7 +28,7 @@
 				icon="mdi-home"
 				color="accent"
 				push
-				v-ripple
+				ripple
 			/>
 		</div>
 	</q-page>
