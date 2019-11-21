@@ -5,7 +5,7 @@
 		:no-caps="blok.no_caps"
 		:to="blok.to | linkType"
 		@click="openLink(blok.to)"
-		v-ripple
+		ripple
 		v-editable="blok"
 	>
 		<component
