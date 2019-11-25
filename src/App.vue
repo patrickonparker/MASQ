@@ -28,6 +28,7 @@
 			getFonts(theme) {
 				let googleFonts = theme.google_fonts.split(", ");
 				let adobeFonts = theme.adobe_edge_web_fonts.split(", ").join(";");
+
 				if (googleFonts.length > 0) {
 					WebFont.load({
 						google: {
@@ -36,6 +37,7 @@
 						timeout: 2000
 					});
 				}
+
 				if (adobeFonts.length > 0) {
 					WebFont.load({
 						typekit: {
@@ -45,6 +47,7 @@
 						timeout: 2000
 					});
 				}
+
 				let app = document.getElementById("q-app");
 				if ((theme.default_heading_font || {}).length > 0) {
 					app.style.setProperty("--heading-font", theme.default_heading_font);
@@ -53,8 +56,10 @@
 					app.style.setProperty("--body-font", theme.default_body_font);
 				}
 			},
+
 			setTheme(theme) {
 				let qColors = [
+					"dark",
 					"primary",
 					"secondary",
 					"accent",
@@ -65,14 +70,7 @@
 				];
 				let qBreakpoints = ["xs", "sm", "md", "lg"];
 				let ponyFill = {};
-				for (var i = 0; i < qColors.length; i++) {
-					setBrand(`${qColors[i]}`, theme[`${qColors[i]}`]);
-					ponyFill[`--q-color-${qColors[i]}`] = theme[`${qColors[i]}`];
-				}
-				for (var i = 0; i < qBreakpoints.length; i++) {
-					ponyFill[`--masonry_${qBreakpoints[i]}`] =
-						theme[`masonry_${qBreakpoints[i]}`];
-				}
+
 				if (theme.dark_theme === "true") {
 					this.$q.dark.set(true);
 				} else if (theme.dark_theme === "auto") {
@@ -80,12 +78,33 @@
 				} else {
 					this.$q.dark.set(false);
 				}
+
+				for (var i = 0; i < qColors.length; i++) {
+					let qColor = qColors[i];
+					let sbColor = theme[`${qColor}`];
+					let dark = this.$q.dark.isActive;
+
+					if (dark && sbColor.includes("/")) {
+						sbColor = sbColor.split("/")[1];
+					} else if (!dark && sbColor.includes("/")) {
+						sbColor = sbColor.split("/")[0];
+					}
+
+					setBrand(`${qColor}`, sbColor);
+					ponyFill[`--q-color-${qColor}`] = sbColor;
+				}
+
+				for (var i = 0; i < qBreakpoints.length; i++) {
+					ponyFill[`--masonry_${qBreakpoints[i]}`] =
+						theme[`masonry_${qBreakpoints[i]}`];
+				}
+
 				cssVars({
-					// Options...
 					variables: ponyFill
 				});
 			}
 		},
+
 		async created() {
 			const fetchVersion = async version => {
 				await storyapi
