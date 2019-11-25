@@ -1,4 +1,4 @@
-@import './typography.scss';
+@import "./typography.scss";
 
 #masq-loader {
   display: flex;
@@ -10,7 +10,7 @@
   bottom: 0;
   left: 0;
   background: #222;
-  @media (prefers-color-scheme: 'light') {
+  @media (prefers-color-scheme: "light") {
     background: #eee;
   }
   z-index: 99999;
@@ -34,7 +34,7 @@
   .q-drawer__content {
     @media (min-width: 1024px) {
       & {
-        @media (prefers-color-scheme: 'dark') {
+        @media (prefers-color-scheme: "dark") {
           background-color: transparent !important;
           .q-item__label {
             color: #dddddd;
@@ -43,7 +43,7 @@
             background: rgba(255, 255, 255, 0.15);
           }
         }
-        @media (prefers-color-scheme: 'light') {
+        @media (prefers-color-scheme: "light") {
           background-color: transparent !important;
           .q-item__label {
             color: #333333;
@@ -55,7 +55,7 @@
       }
     }
   }
-  .q-page {
+  .body--light & .q-page {
     background: white;
   }
 }
