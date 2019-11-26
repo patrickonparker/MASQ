@@ -9,9 +9,11 @@
 				<q-btn dense flat icon="mdi-window-maximize" @click="maximize" />
 				<q-btn dense flat icon="mdi-close" @click="close" />
 			</q-bar>
-			<q-toolbar :class="!leftDrawer ? 'd-closed' : ''">
+			<q-toolbar
+				:class="[!leftDrawer ? 'd-closed' : '', content.toolbar_class]"
+			>
 				<q-btn
-					v-if="content.sidebar"
+					v-if="sidebarButton"
 					flat
 					dense
 					round
@@ -38,7 +40,9 @@
 			v-if="content.sidebar"
 			v-model="leftDrawer"
 			show-if-above
-			content-class="bg-grey-10"
+			:behavior="content.sidebar_behavior ? 'mobile' : 'default'"
+			:content-class="content.sidebar_class"
+			:no-swipe-open="$q.platform.is.ios"
 			class="non-selectable"
 		>
 			<div :style="macApp ? 'height: 32px;' : ''" />
@@ -49,9 +53,21 @@
 				:blok="blok"
 			/>
 		</q-drawer>
+
 		<q-page-container>
 			<router-view />
 		</q-page-container>
+
+		<q-footer v-if="content.footer" :class="content.footer_class">
+			<component
+				v-for="blok in content.footer"
+				:key="blok._uid"
+				:is="blok.component"
+				:blok="blok"
+			/>
+		</q-footer>
+
+		<q-resize-observer @resize="onResize" />
 	</q-layout>
 </template>
 
@@ -61,7 +77,8 @@
 		data() {
 			return {
 				story: {},
-				leftDrawer: false
+				leftDrawer: false,
+				windowWidth: null
 			};
 		},
 		created() {
@@ -78,13 +95,26 @@
 				return this.$q.platform.is.win && this.$q.platform.is.electron;
 			},
 			layout() {
-				return (this.$q.platform.is.win && this.$q.platform.is.electron) ||
-					this.story.full_width_toolbar
-					? "hHh Lpr lFf"
-					: "lHh Lpr lFf";
+				let header =
+					(this.$q.platform.is.win && this.$q.platform.is.electron) ||
+					this.content.full_width_toolbar
+						? "hHh"
+						: "lHr";
+				let page = "LpR";
+				let fixed = this.content.fixed_footer ? "F" : "f";
+				let footer = this.content.full_width_footer
+					? "f" + fixed + "f"
+					: "l" + fixed + "r";
+				return `${header} ${page} ${footer}`;
+			},
+			sidebarButton() {
+				return this.content && this.windowWidth < 1024;
 			}
 		},
 		methods: {
+			onResize(size) {
+				this.windowWidth = size.width;
+			},
 			minimize() {
 				if (process.env.MODE === "electron") {
 					this.$q.electron.remote.BrowserWindow.getFocusedWindow().minimize();
