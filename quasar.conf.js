@@ -5,27 +5,27 @@ module.exports = function(ctx) {
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
     // https://quasar.dev/quasar-cli/cli-documentation/boot-files
-    boot: ['storyblok', 'components', 'mixins', 'filters'],
+    boot: ["storyblok", "components", "mixins", "filters"],
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
-    css: ['app.scss'],
+    css: ["app.scss"],
 
     // https://github.com/quasarframework/quasar/tree/dev/extras
     extras: [
       // 'ionicons-v4',
-      'mdi-v4',
+      "mdi-v4",
       // 'fontawesome-v5',
       // 'eva-icons',
       // 'themify',
       // 'roboto-font-latin-ext', // this or either 'roboto-font', NEVER both!
 
-      'roboto-font' // optional, you are not bound to it
+      "roboto-font" // optional, you are not bound to it
       // 'material-icons' // optional, you are not bound to it
     ],
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
     framework: {
-      iconSet: 'mdi-v4', // Quasar icon set
+      iconSet: "mdi-v4", // Quasar icon set
       // lang: 'de', // Quasar language pack
 
       // Possible values for "all":
@@ -35,7 +35,7 @@ module.exports = function(ctx) {
       //            (fastest compile time; minimum bundle size; most tedious)
       // * true   - Import everything from Quasar
       //            (not treeshaking Quasar; biggest bundle size; convenient)
-      all: 'auto',
+      all: "auto",
 
       components: [],
       directives: [],
@@ -51,7 +51,10 @@ module.exports = function(ctx) {
     // https://quasar.dev/quasar-cli/cli-documentation/supporting-ie
     supportIE: true,
 
-    htmlVariables: { SB_TOKEN: process.env.SB_TOKEN },
+    htmlVariables: {
+      SB_TOKEN: process.env.SB_TOKEN,
+      NAME: process.env.NAME
+    },
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
@@ -59,7 +62,7 @@ module.exports = function(ctx) {
         SB_TOKEN: JSON.stringify(process.env.SB_TOKEN)
       },
       scopeHoisting: true,
-      vueRouterMode: 'history',
+      vueRouterMode: "history",
       // showProgress: false,
       // gzip: true,
       // analyze: true,
@@ -91,38 +94,38 @@ module.exports = function(ctx) {
       // workboxPluginMode: 'InjectManifest',
       // workboxOptions: {}, // only for NON InjectManifest
       manifest: {
-        // name: 'Quasar App',
-        // short_name: 'Quasar App',
+        name: process.env.NAME,
+        short_name: process.env.NAME,
         // description: 'A Quasar Framework app',
-        display: 'standalone',
-        orientation: 'portrait',
-        background_color: '#ffffff',
-        theme_color: '#027be3',
+        display: "standalone",
+        orientation: "portrait",
+        background_color: "#ffffff",
+        theme_color: "#027be3",
         icons: [
           {
-            src: 'statics/icons/icon-128x128.png',
-            sizes: '128x128',
-            type: 'image/png'
+            src: "statics/icons/icon-128x128.png",
+            sizes: "128x128",
+            type: "image/png"
           },
           {
-            src: 'statics/icons/icon-192x192.png',
-            sizes: '192x192',
-            type: 'image/png'
+            src: "statics/icons/icon-192x192.png",
+            sizes: "192x192",
+            type: "image/png"
           },
           {
-            src: 'statics/icons/icon-256x256.png',
-            sizes: '256x256',
-            type: 'image/png'
+            src: "statics/icons/icon-256x256.png",
+            sizes: "256x256",
+            type: "image/png"
           },
           {
-            src: 'statics/icons/icon-384x384.png',
-            sizes: '384x384',
-            type: 'image/png'
+            src: "statics/icons/icon-384x384.png",
+            sizes: "384x384",
+            type: "image/png"
           },
           {
-            src: 'statics/icons/icon-512x512.png',
-            sizes: '512x512',
-            type: 'image/png'
+            src: "statics/icons/icon-512x512.png",
+            sizes: "512x512",
+            type: "image/png"
           }
         ]
       }
@@ -136,7 +139,7 @@ module.exports = function(ctx) {
 
     // https://quasar.dev/quasar-cli/developing-electron-apps/configuring-electron
     electron: {
-      bundler: 'builder', // or 'packager'
+      bundler: "builder", // or 'packager'
 
       extendWebpack(cfg) {
         // do something with Electron main process Webpack cfg
@@ -156,11 +159,11 @@ module.exports = function(ctx) {
 
       builder: {
         // https://www.electron.build/configuration/configuration
-        appId: 'masq',
+        appId: "masq",
         win: {
-          target: 'nsis'
+          target: "nsis"
         }
       }
     }
-  }
-}
+  };
+};

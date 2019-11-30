@@ -22,6 +22,7 @@
 					let col = quasarCols[i];
 					size.length > 0 ? classes.push(`col-${col}-${size}`) : "";
 				}
+				classes.push(this.blok.class);
 				return classes;
 			}
 		}

@@ -1,5 +1,5 @@
 <template>
-	<div :class="['row', `q-col-gutter-${blok.gutter}`]">
+	<div :class="['row', `q-col-gutter-${blok.gutter}`, blok.class]">
 		<component
 			v-for="blok in blok.children"
 			:key="blok._uid"

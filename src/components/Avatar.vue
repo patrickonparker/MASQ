@@ -7,6 +7,7 @@
 		:rounded="blok.shape === 'rounded'"
 		:square="blok.shape === 'square'"
 		:text-color="blok.text_color"
+		v-editable="blok"
 	>
 		{{ check(blok.picture) || check(blok.icon) ? "" : blok.text }}
 		<component

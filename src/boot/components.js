@@ -26,6 +26,7 @@ import Space from "components/Space";
 import Tabs from "components/Tabs";
 import Toolbar from "components/Toolbar";
 import Video from "components/Video";
+import VideoBackground from "components/VideoBackground";
 
 // "async" is optional
 export default async ({ Vue }) => {
@@ -56,5 +57,6 @@ export default async ({ Vue }) => {
   Vue.component("Toolbar", Toolbar);
   Vue.component("Tabs", Tabs);
   Vue.component("Video", Video);
+  Vue.component("VideoBackground", VideoBackground);
   Vue.use(PortalVue);
 };

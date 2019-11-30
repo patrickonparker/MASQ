@@ -4,6 +4,7 @@
 		:action="'https://formsubmit.co/' + blok.email_address"
 		:class="blok.class"
 		:style="blok.style"
+		v-editable="blok"
 	>
 		<component
 			v-for="blok in blok.content"

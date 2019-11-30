@@ -8,7 +8,7 @@
   "author": "James Lovallo <patrickonparker@gmail.com>",
   "private": true,
   "scripts": {
-    "↻⠀Switch Projects": "netlify unlink && netlify link && netlify dev -c 'node icon.js'",
+    "↻⠀Switch⠀Projects": "netlify unlink && netlify link && netlify dev -c 'node icon.js'",
     "▲⠀Publish⠀to⠀Netlify": "netlify dev -c 'quasar b -m pwa' && netlify deploy -p",
     "▶⠀Start⠀Dev⠀Server": "netlify dev -c 'quasar d'",
     "⠀⠀┗⠀Platforms": "",

@@ -23,7 +23,7 @@ export default async ({ Vue }) => {
         storyblok.pingEditor(() => {
           if (storyblok.inEditor) {
           } else {
-            prop.includes("://") ? openURL(prop) : "";
+            prop.includes(":") ? openURL(prop) : "";
           }
         });
       },
