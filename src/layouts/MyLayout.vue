@@ -9,6 +9,7 @@
 				<q-btn dense flat icon="mdi-window-maximize" @click="maximize" />
 				<q-btn dense flat icon="mdi-close" @click="close" />
 			</q-bar>
+			<div v-if="content.full_width_toolbar && macApp" class="q-py-md" />
 			<q-toolbar
 				:class="[!leftDrawer ? 'd-closed' : '', content.toolbar_class]"
 			>
@@ -45,7 +46,7 @@
 			:no-swipe-open="$q.platform.is.ios"
 			class="non-selectable"
 		>
-			<div :style="macApp ? 'height: 32px;' : ''" />
+			<div v-if="!content.full_width_toolbar && macApp" class="q-py-md" />
 			<component
 				v-for="blok in content.sidebar"
 				:key="blok._uid"
