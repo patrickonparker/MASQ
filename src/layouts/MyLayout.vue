@@ -41,7 +41,7 @@
 			v-if="content.sidebar"
 			v-model="leftDrawer"
 			show-if-above
-			bordered
+			:bordered="content.bordered_sidebar"
 			:behavior="content.sidebar_behavior ? 'mobile' : 'default'"
 			:content-class="content.sidebar_class"
 			:no-swipe-open="$q.platform.is.ios"
