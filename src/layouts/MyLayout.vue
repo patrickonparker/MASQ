@@ -47,7 +47,10 @@
 			:no-swipe-open="$q.platform.is.ios"
 			class="non-selectable"
 		>
-			<div v-if="!content.full_width_toolbar && macApp" class="q-py-md" />
+			<div
+				v-if="!content.full_width_toolbar && macApp"
+				class="q-py-md q-electron-drag"
+			/>
 			<component
 				v-for="blok in content.sidebar"
 				:key="blok._uid"
