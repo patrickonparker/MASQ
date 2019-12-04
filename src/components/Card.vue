@@ -41,3 +41,21 @@
 		props: ["blok"]
 	};
 </script>
+
+<style lang="scss">
+	.row {
+		.q-card {
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+
+			&__section {
+				flex: 1 1 auto;
+			}
+
+			.col-grow {
+				flex: 0 0;
+			}
+		}
+	}
+</style>
