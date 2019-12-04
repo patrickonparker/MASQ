@@ -57,6 +57,12 @@
 		</q-drawer>
 
 		<q-page-container>
+			<component
+				v-for="blok in content.global_page_content"
+				:key="blok._uid"
+				:is="blok.component"
+				:blok="blok"
+			/>
 			<router-view />
 		</q-page-container>
 
