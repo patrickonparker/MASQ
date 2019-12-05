@@ -1,5 +1,11 @@
 <template>
 	<div id="q-app">
+		<component
+			v-for="blok in global_content"
+			:key="blok._uid"
+			:is="blok.component"
+			:blok="blok"
+		/>
 		<router-view />
 		<div id="masq-loader">
 			<q-spinner-ball color="primary" size="4em" />
@@ -22,7 +28,8 @@
 	export default {
 		name: "App",
 		data: () => ({
-			css: {}
+			css: {},
+			global_content: {}
 		}),
 		methods: {
 			getFonts(theme) {
@@ -116,6 +123,7 @@
 						this.getFonts(theme);
 						this.setTheme(theme);
 						this.css = response.data.story.content.css;
+						this.global_content = response.data.story.content.global_app_content;
 						setInterval(() => {
 							document.getElementById("masq-loader").className = "loaded";
 						}, 500);
