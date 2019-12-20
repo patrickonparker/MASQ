@@ -4,7 +4,7 @@
 		basic
 		:image-class="blok.class"
 		:ratio="ratio"
-		:src="dynamic"
+		:src="blok.custom_placeholder ? placeholder : dynamic"
 		v-editable="blok"
 	>
 		<component
@@ -35,10 +35,19 @@
 				} else if (this.blok.src) {
 					return this.blok.src;
 				} else {
-					let random = Math.floor(Math.random() * 1000) + 1;
-					let width = this.blok.width ? this.blok.width : "600";
-					let height = this.blok.height ? this.blok.height : "400";
-					return `https://picsum.photos/${width}/${height}?random=${random}`;
+					let placeholderStorage = localStorage.getItem("placeholders");
+					if (placeholderStorage) {
+						let placeholders = placeholderStorage.split(",");
+						let random = Math.floor(
+							Math.random() * Math.floor(placeholders.length)
+						);
+						return placeholders[random];
+					} else {
+						let random = Math.floor(Math.random() * 1000) + 1;
+						let width = this.blok.width ? this.blok.width : "600";
+						let height = this.blok.height ? this.blok.height : "400";
+						return `https://picsum.photos/${width}/${height}?random=${random}`;
+					}
 				}
 			},
 			ratio() {

@@ -109,6 +109,25 @@
 				cssVars({
 					variables: ponyFill
 				});
+			},
+
+			async fetchPlaceholders(query) {
+				let storedQuery = localStorage.getItem("query");
+				localStorage.setItem("query", query);
+				if (query !== storedQuery) {
+					let placeholders = [];
+					console.info(
+						`Fetching updated placeholders, ${storedQuery} → ${query}`
+					);
+					let searchString = `https://pixabay.com/api/?key=12944521-9a2f8bb0890e6f2118e1acf5a&q=${query}&safesearch=false&order=popular&per_page=200`;
+					let request = await fetch(searchString);
+					let data = await request.json();
+					let hits = data.hits;
+					hits.forEach(hit => {
+						placeholders.push(hit.largeImageURL);
+					});
+					localStorage.setItem("placeholders", placeholders);
+				}
 			}
 		},
 
@@ -122,8 +141,9 @@
 						let theme = response.data.story.content;
 						this.getFonts(theme);
 						this.setTheme(theme);
-						this.css = response.data.story.content.css;
-						this.global_content = response.data.story.content.global_app_content;
+						this.css = theme.css;
+						this.global_content = theme.global_app_content;
+						this.fetchPlaceholders(theme.placeholder_image_search_term);
 						setInterval(() => {
 							document.getElementById("masq-loader").className = "loaded";
 						}, 500);
