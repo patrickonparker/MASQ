@@ -119,7 +119,7 @@
 					console.info(
 						`Fetching updated placeholders, ${storedQuery} → ${query}`
 					);
-					let searchString = `https://pixabay.com/api/?key=12944521-9a2f8bb0890e6f2118e1acf5a&q=${query}&safesearch=false&order=popular&per_page=200`;
+					let searchString = `https://pixabay.com/api/?key=12944521-9a2f8bb0890e6f2118e1acf5a&q=${query}&safesearch=false&order=popular&image_type=photo&per_page=200`;
 					let request = await fetch(searchString);
 					let data = await request.json();
 					let hits = data.hits;
