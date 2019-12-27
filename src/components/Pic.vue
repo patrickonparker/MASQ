@@ -1,7 +1,6 @@
 <template>
 	<q-img
 		v-bind="blok"
-		basic
 		:image-class="blok.class"
 		:ratio="ratio"
 		:src="blok.custom_placeholder ? placeholder : dynamic"

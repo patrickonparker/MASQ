@@ -8,6 +8,7 @@ import Column from "components/Column";
 import Container from "components/Container";
 import Dialog from "components/Dialog";
 import DisplayHelper from "components/DisplayHelper";
+import Embed from "components/Embed";
 import ExpansionItem from "components/ExpansionItem";
 import Form from "components/Form";
 import FormInput from "components/FormInput";
@@ -40,6 +41,7 @@ export default async ({ Vue }) => {
   Vue.component("Container", Container);
   Vue.component("Dialog", Dialog);
   Vue.component("DisplayHelper", DisplayHelper);
+  Vue.component("Embed", Embed);
   Vue.component("ExpansionItem", ExpansionItem);
   Vue.component("Form", Form);
   Vue.component("FormInput", FormInput);
