@@ -20,14 +20,10 @@
 
 <script>
 	import Fragment from "vue-fragment";
-	import pdf from "vue-pdf";
 	import postscribe from "postscribe";
 
 	export default {
 		props: ["blok"],
-		components: {
-			pdf
-		},
 		mounted: function() {
 			postscribe(`#${this.blok._uid}`, `${this.blok.script_tag}`);
 		}
