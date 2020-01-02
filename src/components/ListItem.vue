@@ -1,6 +1,7 @@
 <template>
 	<q-item
 		v-bind="blok"
+		:active-class="blok.active_class"
 		:inset-level="Number(blok.inset_level)"
 		:to="blok.to | linkType"
 		@click="openLink(blok.to)"
