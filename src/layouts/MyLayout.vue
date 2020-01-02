@@ -12,6 +12,7 @@
 			<div v-if="content.full_width_toolbar && macApp" class="q-py-md" />
 			<q-toolbar
 				:class="[!leftDrawer ? 'd-closed' : '', content.toolbar_class]"
+				v-if="this.check(content.toolbar)"
 			>
 				<q-btn
 					v-if="sidebarButton"

@@ -49,11 +49,12 @@ p {
   font-size: 1rem;
 }
 
-[class*='q-markdown--heading-h'] {
+[class*="q-markdown--heading-h"] {
   padding: 0 0 !important;
 }
 
-.q-card .q-markdown {
+.q-card .q-markdown,
+.q-toolbar .q-markdown {
   *:first-child {
     margin-top: 0;
   }
@@ -63,8 +64,8 @@ p {
 }
 
 .q-markdown--link-external:after {
-  font-family: 'Material Design Icons' !important;
-  content: '\f3cc' !important;
+  font-family: "Material Design Icons" !important;
+  content: "\f3cc" !important;
 }
 
 .q-markdown--line-numbers-wrapper {
