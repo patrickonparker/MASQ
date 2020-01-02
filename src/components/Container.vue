@@ -20,10 +20,7 @@
 
 <script>
 	export default {
-		props: ["blok"],
-		created() {
-			console.log(this.blok.full_width);
-		}
+		props: ["blok"]
 	};
 </script>
 
