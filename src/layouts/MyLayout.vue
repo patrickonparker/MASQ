@@ -39,7 +39,7 @@
 		</q-header>
 
 		<q-drawer
-			v-if="content.sidebar"
+			v-if="this.check(content.sidebar)"
 			v-model="leftDrawer"
 			show-if-above
 			:bordered="content.bordered_sidebar"
@@ -64,7 +64,7 @@
 			<router-view />
 		</q-page-container>
 
-		<q-footer v-if="content.footer" :class="content.footer_class">
+		<q-footer v-if="this.check(content.footer)" :class="content.footer_class">
 			<component
 				v-for="blok in content.footer"
 				:key="blok._uid"
