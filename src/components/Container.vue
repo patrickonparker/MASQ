@@ -1,5 +1,6 @@
 <template>
 	<div
+		:id="blok.id"
 		:class="[
 			'container',
 			blok.disable_bottom_margin ? '' : 'standard-margin',
