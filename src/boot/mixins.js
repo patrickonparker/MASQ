@@ -27,9 +27,13 @@ export default async ({ Vue }) => {
           } else if (prop.includes("#")) {
             let el = document.querySelectorAll(prop)[0];
             window.scrollTo({
-              top: el.offsetTop,
+              top: el.offsetTop - 48,
               behavior: "smooth"
             });
+            setTimeout(() => {
+              el.classList.add("animated", "pulse");
+            }, 500);
+            el.classList.remove("animated", "pulse");
           }
         });
       },
