@@ -3,7 +3,7 @@
 		:class="[
 			'container',
 			blok.disable_bottom_margin ? '' : 'standard-margin',
-			blok.full_width ? 'full-width-container q-layout-padding' : '',
+			blok.full_width,
 			blok.shape,
 			blok.class
 		]"
@@ -27,6 +27,7 @@
 
 <style lang="scss" scoped>
 	.container {
+		position: relative;
 		max-width: 1440px;
 		margin: 0 auto;
 		width: 100%;
