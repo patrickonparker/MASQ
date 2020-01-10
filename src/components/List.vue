@@ -16,3 +16,20 @@
 		props: ["blok"]
 	};
 </script>
+
+<style lang="scss">
+	.row > .q-item {
+		@media (max-width: 599px) {
+			width: 100%;
+		}
+		@media (min-width: 600px) {
+			width: 50%;
+		}
+		@media (min-width: 1200px) {
+			width: 33.33%;
+		}
+		@media (min-width: 1500px) {
+			width: 25%;
+		}
+	}
+</style>
