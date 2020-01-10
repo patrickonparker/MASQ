@@ -22,8 +22,14 @@ export default async ({ Vue }) => {
       openLink(prop) {
         storyblok.pingEditor(() => {
           if (storyblok.inEditor) {
-          } else {
-            prop.includes(":") ? openURL(prop) : "";
+          } else if (prop.includes(":")) {
+            openURL(prop);
+          } else if (prop.includes("#")) {
+            let el = document.querySelectorAll(prop)[0];
+            window.scrollTo({
+              top: el.offsetTop,
+              behavior: "smooth"
+            });
           }
         });
       },
