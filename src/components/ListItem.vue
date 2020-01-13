@@ -18,9 +18,12 @@
 		</q-item-section>
 		<q-item-section>
 			<q-item-label>{{ blok.text }}</q-item-label>
-			<q-item-label caption :lines="blok.caption_line_cap">{{
-				blok.caption
-			}}</q-item-label>
+			<q-item-label
+				v-if="check(blok.caption)"
+				caption
+				:lines="blok.caption_line_cap"
+				>{{ blok.caption }}</q-item-label
+			>
 		</q-item-section>
 		<q-item-section
 			side
