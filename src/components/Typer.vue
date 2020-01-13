@@ -2,7 +2,7 @@
 	<div :class="blok.class" :style="blok.style" v-editable="blok">
 		{{ blok.sentence }}
 		<vue-typer
-			:text="typerArray"
+			:text="blok.text.split(',')"
 			:repeat="Infinity"
 			:shuffle="false"
 			initial-action="typing"
@@ -22,13 +22,7 @@
 
 	export default {
 		props: ["blok"],
-		components: { VueTyper },
-		computed: {
-			typerArray() {
-				var computedArray = this.blok.text.split(",");
-				return computedArray;
-			}
-		}
+		components: { VueTyper }
 	};
 </script>
 
