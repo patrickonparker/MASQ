@@ -27,6 +27,7 @@ import Row from "components/Row";
 import Space from "components/Space";
 import Tabs from "components/Tabs";
 import Toolbar from "components/Toolbar";
+import Typer from "components/Typer";
 import Video from "components/Video";
 import VideoBackground from "components/VideoBackground";
 
@@ -59,6 +60,7 @@ export default async ({ Vue }) => {
   Vue.component("Row", Row);
   Vue.component("Space", Space);
   Vue.component("Toolbar", Toolbar);
+  Vue.component("Typer", Typer);
   Vue.component("Tabs", Tabs);
   Vue.component("Video", Video);
   Vue.component("VideoBackground", VideoBackground);

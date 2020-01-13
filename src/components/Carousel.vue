@@ -7,8 +7,12 @@
 		infinite
 		:navigation="blok.navigation"
 		swipeable
+		transition-prev="slide-right"
+		transition-next="slide-left"
 		v-model="slide"
 		v-editable="blok"
+		:class="blok.class"
+		:style="blok.style"
 	>
 		<q-carousel-slide
 			v-for="(blok, index) in blok.content"

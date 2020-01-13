@@ -55,5 +55,8 @@
   },
   "browserslist": [
     "last 1 version, not dead, ie >= 11"
-  ]
+  ],
+  "dependencies": {
+    "vue-typer": "^1.2.0"
+  }
 }
