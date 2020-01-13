@@ -15,6 +15,7 @@ import Form from "components/Form";
 import FormInput from "components/FormInput";
 import GoogleMap from "components/GoogleMap";
 import Icon from "components/Icon";
+import Link from "components/Link";
 import List from "components/List";
 import ListItem from "components/ListItem";
 import Markdown from "components/Markdown";
@@ -50,6 +51,7 @@ export default async ({ Vue }) => {
   Vue.component("FormInput", FormInput);
   Vue.component("GoogleMap", GoogleMap);
   Vue.component("Icon", Icon);
+  Vue.component("Link", Link);
   Vue.component("List", List);
   Vue.component("ListItem", ListItem);
   Vue.component("Markdown", Markdown);
