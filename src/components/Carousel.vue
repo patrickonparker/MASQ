@@ -2,7 +2,6 @@
 	<q-carousel
 		animated
 		arrows
-		:autoplay="blok.autoplay"
 		:height="blok.height"
 		infinite
 		:navigation="blok.navigation"
@@ -35,3 +34,9 @@
 		}
 	};
 </script>
+
+<style lang="scss" scoped>
+	.q-carousel__slide .q-img__content > .container {
+		padding: 48px !important;
+	}
+</style>
