@@ -3,42 +3,48 @@
 }
 
 h1,
-h1.q-markdown--heading-h1 {
+h1.q-markdown--heading-h1,
+.text-h1 {
   font-size: 4rem;
   line-height: 1.25em;
   font-family: var(--heading-font);
 }
 
 h2,
-h2.q-markdown--heading-h2 {
+h2.q-markdown--heading-h2,
+.text-h2 {
   font-size: 3.5rem;
   line-height: 1.25em;
   font-family: var(--heading-font);
 }
 
 h3,
-h3.q-markdown--heading-h3 {
+h3.q-markdown--heading-h3,
+.text-h3 {
   font-size: 3rem;
   line-height: 1.25em;
   font-family: var(--heading-font);
 }
 
 h4,
-h4.q-markdown--heading-h4 {
+h4.q-markdown--heading-h4,
+.text-h4 {
   font-size: 2.5rem;
   line-height: 1.25em;
   font-family: var(--heading-font);
 }
 
 h5,
-h5.q-markdown--heading-h5 {
+h5.q-markdown--heading-h5,
+.text-h5 {
   font-size: 2rem;
   line-height: 1.25em;
   font-family: var(--heading-font);
 }
 
 h6,
-h6.q-markdown--heading-h6 {
+h6.q-markdown--heading-h6,
+.text-h6 {
   font-size: 1.5rem;
   line-height: 1.25em;
   font-family: var(--heading-font);

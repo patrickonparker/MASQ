@@ -1,5 +1,5 @@
 <template>
-	<div :class="blok.class" :style="blok.style" v-editable="blok">
+	<div :class="['q-typer', blok.class]" :style="blok.style" v-editable="blok">
 		{{ blok.sentence }}
 		<vue-typer
 			:text="blok.text.split(',')"
@@ -13,6 +13,7 @@
 			erase-style="select-all"
 			:erase-on-complete="false"
 			caret-animation="smooth"
+			:style="`min-width: ${minWidth};`"
 		></vue-typer>
 	</div>
 </template>
@@ -22,17 +23,27 @@
 
 	export default {
 		props: ["blok"],
-		components: { VueTyper }
+		components: { VueTyper },
+		computed: {
+			minWidth() {
+				let arr = this.blok.text.split(",");
+				let longest = Math.max(...arr.map(el => el.length));
+				let reduced = longest * 0.6;
+				return reduced + "em";
+			}
+		}
 	};
 </script>
 
 <style>
+	.q-typer {
+		overflow: hidden;
+	}
 	.vue-typer .left,
 	.vue-typer .right {
 		float: none !important;
 	}
 	.vue-typer {
 		display: inline-block;
-		min-width: 10em;
 	}
 </style>

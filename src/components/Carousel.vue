@@ -35,7 +35,7 @@
 	};
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 	.q-carousel__slide .q-img__content > .container {
 		padding: 48px !important;
 	}
