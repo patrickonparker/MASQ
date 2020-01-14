@@ -7,7 +7,7 @@
 		v-model="expanded"
 		v-editable="blok"
 	>
-		<template v-slot:header v-if="blok.header">
+		<template v-slot:header v-if="blok.header.length > 0">
 			<component
 				v-for="blok in blok.header"
 				:key="blok._uid"
