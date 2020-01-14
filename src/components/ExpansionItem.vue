@@ -30,17 +30,12 @@
 <script>
 	export default {
 		props: ["blok"],
-		data() {
-			return {
-				expanded: false
-			};
-		},
+		data: () => ({
+			expanded: false
+		}),
 		computed: {
 			icon() {
 				return this.mdi(this.blok.icon);
-			},
-			expandIcon() {
-				return this.mdi(this.blok.expand_icon);
 			}
 		}
 	};
