@@ -2,6 +2,9 @@
 	<q-carousel
 		animated
 		arrows
+		:autoplay="
+			blok.autoplay_interval > 0 ? blok.autoplay_interval * 1000 : blok.autoplay
+		"
 		:height="blok.height"
 		infinite
 		:navigation="blok.navigation"
