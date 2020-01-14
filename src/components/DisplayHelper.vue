@@ -26,10 +26,11 @@
 				if (this.blok.only_show_on_path || this.blok.hide_on_path) {
 					if (this.blok.only_show_on_path === "/") {
 						return this.$route.path === "/" ? true : false;
+					} else if (this.blok.hide_on_path === "/") {
+						return this.$route.path === "/" ? false : true;
 					} else if (this.blok.only_show_on_path.length > 0) {
 						return this.$route.path.startsWith(this.blok.only_show_on_path);
 					} else if (this.blok.hide_on_path.length > 0) {
-						console.log("HIDE CHECK");
 						let paths = this.blok.hide_on_path.split(",");
 						let hide = true;
 						paths.forEach(path => {
