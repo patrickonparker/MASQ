@@ -29,7 +29,12 @@
 					} else if (this.blok.hide_on_path === "/") {
 						return this.$route.path === "/" ? false : true;
 					} else if (this.blok.only_show_on_path.length > 0) {
-						return this.$route.path.startsWith(this.blok.only_show_on_path);
+						let paths = this.blok.only_show_on_path.split(",");
+						let show = false;
+						paths.forEach(path => {
+							if (this.$route.path.startsWith(path)) show = true;
+						});
+						return show;
 					} else if (this.blok.hide_on_path.length > 0) {
 						let paths = this.blok.hide_on_path.split(",");
 						let hide = true;
