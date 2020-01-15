@@ -60,7 +60,6 @@ export default async ({ Vue }) => {
         if (!this.$q.platform.is.electron && this.$q.platform.within.iframe) {
           storyblok.pingEditor(() => {
             if (storyblok.inEditor) {
-              // console.log(storyblok.inEditor)
               fetchVersion("draft");
               storyblok.enterEditmode;
               storyblok.on(["input"], event => {
