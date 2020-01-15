@@ -1,7 +1,7 @@
 <template>
 	<q-btn
 		v-bind="blok"
-		:icon="icon"
+		:icon="this.mdi(blok.icon)"
 		:no-caps="blok.no_caps"
 		:to="blok.to | linkType"
 		@click="openLink(blok.to)"
@@ -19,12 +19,7 @@
 
 <script>
 	export default {
-		props: ["blok"],
-		computed: {
-			icon() {
-				return this.mdi(this.blok.icon);
-			}
-		}
+		props: ["blok"]
 	};
 </script>
 
