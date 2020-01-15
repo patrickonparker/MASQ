@@ -1,7 +1,7 @@
 <template>
 	<q-btn
 		v-bind="blok"
-		:icon="icon"
+		:icon="blok.icon ? icon : false"
 		:no-caps="blok.no_caps"
 		:to="blok.to | linkType"
 		@click="openLink(blok.to)"
@@ -27,3 +27,9 @@
 		}
 	};
 </script>
+
+<style lang="scss">
+	.q-btn .q-icon:empty {
+		display: none;
+	}
+</style>
