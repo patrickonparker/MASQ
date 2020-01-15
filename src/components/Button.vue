@@ -1,7 +1,7 @@
 <template>
 	<q-btn
 		v-bind="blok"
-		:icon="blok.icon ? icon : false"
+		:icon="icon"
 		:no-caps="blok.no_caps"
 		:to="blok.to | linkType"
 		@click="openLink(blok.to)"
