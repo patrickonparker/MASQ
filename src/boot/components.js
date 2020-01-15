@@ -21,6 +21,7 @@ import ListItem from "components/ListItem";
 import Markdown from "components/Markdown";
 import Masonry from "components/Masonry";
 import Menu from "components/Menu";
+import Parallax from "components/Parallax";
 import Pic from "components/Pic";
 import PortalVue from "portal-vue";
 import Ribbon from "components/Ribbon";
@@ -57,6 +58,7 @@ export default async ({ Vue }) => {
   Vue.component("Markdown", Markdown);
   Vue.component("Masonry", Masonry);
   Vue.component("Menu", Menu);
+  Vue.component("Parallax", Parallax);
   Vue.component("Pic", Pic);
   Vue.component("Ribbon", Ribbon);
   Vue.component("Row", Row);
