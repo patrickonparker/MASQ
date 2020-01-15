@@ -63,8 +63,10 @@ export default async ({ Vue }) => {
               // console.log(storyblok.inEditor)
               fetchVersion("draft");
               storyblok.enterEditmode;
-              storyblok.on(["change"], () => {
-                fetchVersion("draft");
+              storyblok.on(["input"], event => {
+                if (event.story.id == this.story.id) {
+                  this.story = event.story;
+                }
               });
             } else {
               fetchVersion("published");
