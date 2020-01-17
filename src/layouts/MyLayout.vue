@@ -23,12 +23,11 @@
 					icon="mdi-menu"
 					aria-label="Menu"
 				/>
-				<q-toolbar-title
+				<portal-target
 					v-if="content.show_page_name_in_toolbar"
-					style="flex: 0 0 auto;"
-				>
-					<portal-target name="header" />
-				</q-toolbar-title>
+					name="header"
+					class="q-toolbar__title ellipsis"
+				/>
 				<component
 					v-for="blok in content.toolbar"
 					:key="blok._uid"
