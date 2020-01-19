@@ -10,7 +10,9 @@ var download = function(uri, filename, callback) {
 };
 
 const icon = process.env.APP_ICON;
-// console.log(icon)
-download(icon, "app-icon.png", function() {
-  console.log("Fetched icon:", icon);
-});
+
+if (icon) {
+  download(icon, "app-icon.png", function() {
+    console.info("Fetched icon:", icon);
+  });
+}

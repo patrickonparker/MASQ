@@ -45,6 +45,7 @@
     "vue-carousel-3d": "^0.2.0",
     "vue-fragment": "^1.5.1",
     "vue-packer": "^0.3.0",
+    "vue-typer": "^1.2.0",
     "webfontloader": "^1.6.28",
     "webpack": "^4.41.5"
   },

@@ -1,6 +1,6 @@
 <template>
 	<div
-		v-if="pathConditions"
+		v-if="path"
 		:class="[
 			blok.greater_than,
 			blok.less_than,
@@ -22,11 +22,27 @@
 	export default {
 		props: ["blok"],
 		computed: {
-			pathConditions() {
-				if (this.$route.path.startsWith(this.blok.hide_on_path)) {
-					return false;
-				} else if (!this.$route.path.startsWith(this.blok.only_show_on_path)) {
-					return false;
+			path() {
+				if (this.blok.only_show_on_path || this.blok.hide_on_path) {
+					if (this.blok.only_show_on_path === "/") {
+						return this.$route.path === "/" ? true : false;
+					} else if (this.blok.hide_on_path === "/") {
+						return this.$route.path === "/" ? false : true;
+					} else if (this.blok.only_show_on_path.length > 0) {
+						let paths = this.blok.only_show_on_path.split(",");
+						let show = false;
+						paths.forEach(path => {
+							if (this.$route.path.startsWith(path)) show = true;
+						});
+						return show;
+					} else if (this.blok.hide_on_path.length > 0) {
+						let paths = this.blok.hide_on_path.split(",");
+						let hide = true;
+						paths.forEach(path => {
+							if (this.$route.path.startsWith(path)) hide = false;
+						});
+						return hide;
+					}
 				} else {
 					return true;
 				}

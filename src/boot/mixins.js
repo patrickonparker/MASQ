@@ -60,11 +60,12 @@ export default async ({ Vue }) => {
         if (!this.$q.platform.is.electron && this.$q.platform.within.iframe) {
           storyblok.pingEditor(() => {
             if (storyblok.inEditor) {
-              // console.log(storyblok.inEditor)
               fetchVersion("draft");
               storyblok.enterEditmode;
-              storyblok.on(["change"], () => {
-                fetchVersion("draft");
+              storyblok.on(["input"], event => {
+                if (event.story.id == this.story.id) {
+                  this.story = event.story;
+                }
               });
             } else {
               fetchVersion("published");
