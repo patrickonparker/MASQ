@@ -1130,12 +1130,12 @@
   resolved "https://registry.yarnpkg.com/@positron/stack-trace/-/stack-trace-1.0.0.tgz#14fcc712a530038ef9be1ce6952315a839f466a8"
   integrity sha1-FPzHEqUwA475vhzmlSMVqDn0Zqg=
 
-"@quasar/app@^1.5.1":
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/@quasar/app/-/app-1.5.1.tgz#d5d0826b771cdda3ce8a7e0656528df3fba9c1b1"
-  integrity sha512-eXH2RSG7f9YNTcvngo1sIQO9mMzxbK+UX6d1yNYgmDFMppy58ZI/rD3peNnjqe+falgALQ9KMXgsJdl0196Hfw==
+"@quasar/app@^1.5.2":
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/@quasar/app/-/app-1.5.2.tgz#fbdf90ca691e2c41585a7a82dd6b225db47d8600"
+  integrity sha512-J3zCrN0PPHioGvMVwy2eggtb8ZvrN0XGa1PiyqIbU+mogW11OyupUyrJ1qHMIYvIW2nmM8bT2WZNySvKY8bi9A==
   dependencies:
-    "@quasar/babel-preset-app" "1.1.7"
+    "@quasar/babel-preset-app" "1.1.8"
     "@quasar/fastclick" "1.1.4"
     "@vue/preload-webpack-plugin" "1.1.1"
     autoprefixer "9.7.3"
@@ -1199,10 +1199,10 @@
     webpack-node-externals "1.7.2"
     workbox-webpack-plugin "4.3.1"
 
-"@quasar/babel-preset-app@1.1.7":
-  version "1.1.7"
-  resolved "https://registry.yarnpkg.com/@quasar/babel-preset-app/-/babel-preset-app-1.1.7.tgz#760fbe238b94d6f13f3e4105efd99753ab8f3b61"
-  integrity sha512-xQELeIYLjez2/p5B6UkMN6JKV6T98f6wWiKbKNhhjnC3+YQ1sM1qnSjets/TJNqdQcZnGH4D67HuR0BFuw0mcg==
+"@quasar/babel-preset-app@1.1.8":
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/@quasar/babel-preset-app/-/babel-preset-app-1.1.8.tgz#4c11cb2ac03c6544b0b5e8d5067145cc038d9e3f"
+  integrity sha512-vMtxqgJ3eR2aCHkSTL8zPItly2uu+e0nIG/hJCtZGRvaVuivzLjxttrd1scPPhs9HkjiKTErfMGV/XTZ/gzCew==
   dependencies:
     "@babel/core" "^7.5.5"
     "@babel/plugin-proposal-class-properties" "^7.5.5"
@@ -1224,10 +1224,10 @@
     babel-plugin-module-resolver "^3.2.0"
     babel-plugin-transform-imports "^1.0.0"
 
-"@quasar/extras@^1.4.1":
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/@quasar/extras/-/extras-1.4.1.tgz#93f816febca2a985ce57efe308e8d262c766faab"
-  integrity sha512-1CcupUAyX5bQEax24nQIsQzYkJ6H835JOzJumDUonHZTYe4zXzMpvuoT47F8qkUlRgN3loKqujf3O3it1sWZcQ==
+"@quasar/extras@^1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@quasar/extras/-/extras-1.4.2.tgz#177f3cdbd7b604c8bf903946dbee7ebd3a0ecad4"
+  integrity sha512-lq2h18+IUs8M6weWRVoqzsPluENsBRdb4t2ePbsX0mjYz50Xpk1/K9isUotl7bDQDkJSwbshQKLOD7P1co0fTg==
 
 "@quasar/fastclick@1.1.4":
   version "1.1.4"
@@ -1254,12 +1254,12 @@
     sharp "^0.23.3"
     svgo "^1.3.0"
 
-"@quasar/quasar-app-extension-qmarkdown@^1.0.16":
-  version "1.0.16"
-  resolved "https://registry.yarnpkg.com/@quasar/quasar-app-extension-qmarkdown/-/quasar-app-extension-qmarkdown-1.0.16.tgz#22f5bb8e7fdd428459c777676c6104176ce031d0"
-  integrity sha512-rnOvEMusMsx4d6owfKpswGFpZsJXaOxmPO6RowITLut1q4zoegMYbMlHwEu4mpWAJeEcOTYO1GzAl/1AuFpOKA==
+"@quasar/quasar-app-extension-qmarkdown@^1.0.19":
+  version "1.0.19"
+  resolved "https://registry.yarnpkg.com/@quasar/quasar-app-extension-qmarkdown/-/quasar-app-extension-qmarkdown-1.0.19.tgz#91774cadaf4251513d51abc6d26b930e06ea6130"
+  integrity sha512-+HzU5io5+kfRgmArYKxdqfRnqXSg+rlBeuS9UCVW2xAWgzIfDKp1Yot9wnorgXeze2qrDOcjlE/P3LTodq+xxg==
   dependencies:
-    "@quasar/quasar-ui-qmarkdown" "^1.0.16"
+    "@quasar/quasar-ui-qmarkdown" "^1.0.19"
     front-matter "^3.1.0"
     raw-loader "^4.0.0"
     ware-loader "^0.2.4"
@@ -1271,10 +1271,10 @@
   dependencies:
     "@quasar/quasar-ui-qribbon" "1.0.0-beta.14"
 
-"@quasar/quasar-ui-qmarkdown@^1.0.16":
-  version "1.0.16"
-  resolved "https://registry.yarnpkg.com/@quasar/quasar-ui-qmarkdown/-/quasar-ui-qmarkdown-1.0.16.tgz#85c91c4b06876f297f2b198a2e4f2b6b7b2e2475"
-  integrity sha512-kLUx/XZ+77b+KIcZQllhD37xxbq5eyI//hLwRdFq5P93bvKTfl35m2yKcmJmAKN9FMMvw+/bMB4flW8cSGFQkw==
+"@quasar/quasar-ui-qmarkdown@^1.0.19":
+  version "1.0.19"
+  resolved "https://registry.yarnpkg.com/@quasar/quasar-ui-qmarkdown/-/quasar-ui-qmarkdown-1.0.19.tgz#b7fdac801a0dddcff402a95dcbc80d5ebed91805"
+  integrity sha512-mEJcX187mcfSbjnmS84CW4eeCE6SEStPQ0tUKvWvbB/4BljpLLuNM4X9wHSHGhoyOkTmEnln3bAT5qglX1cdjg==
   dependencies:
     markdown-it "^10.0.0"
     markdown-it-abbr "^1.0.4"
@@ -1290,7 +1290,7 @@
     markdown-it-sup "^1.0.0"
     markdown-it-task-lists "^2.1.1"
     markdown-it-toc-and-anchor "^4.2.0"
-    prismjs "^1.18.0"
+    prismjs "^1.19.0"
 
 "@quasar/quasar-ui-qribbon@1.0.0-beta.14":
   version "1.0.0-beta.14"
@@ -7394,10 +7394,33 @@ node-releases@^1.1.42:
   dependencies:
     semver "^6.3.0"
 
-node-sass@4.13.0, node-sass@^4.13.0:
+node-sass@4.13.0:
   version "4.13.0"
   resolved "https://registry.yarnpkg.com/node-sass/-/node-sass-4.13.0.tgz#b647288babdd6a1cb726de4545516b31f90da066"
   integrity sha512-W1XBrvoJ1dy7VsvTAS5q1V45lREbTlZQqFbiHb3R3OTTCma0XBtuG6xZ6Z4506nR4lmHPTqVRwxT6KgtWC97CA==
+  dependencies:
+    async-foreach "^0.1.3"
+    chalk "^1.1.1"
+    cross-spawn "^3.0.0"
+    gaze "^1.0.0"
+    get-stdin "^4.0.1"
+    glob "^7.0.3"
+    in-publish "^2.0.0"
+    lodash "^4.17.15"
+    meow "^3.7.0"
+    mkdirp "^0.5.1"
+    nan "^2.13.2"
+    node-gyp "^3.8.0"
+    npmlog "^4.0.0"
+    request "^2.88.0"
+    sass-graph "^2.2.4"
+    stdout-stream "^1.4.0"
+    "true-case-path" "^1.0.2"
+
+node-sass@^4.13.1:
+  version "4.13.1"
+  resolved "https://registry.yarnpkg.com/node-sass/-/node-sass-4.13.1.tgz#9db5689696bb2eec2c32b98bfea4c7a2e992d0a3"
+  integrity sha512-TTWFx+ZhyDx1Biiez2nB0L3YrCZ/8oHagaDalbuBSlqXgUPsdkUSzJsVxeDO9LtPB49+Fh3WQl3slABo6AotNw==
   dependencies:
     async-foreach "^0.1.3"
     chalk "^1.1.1"
@@ -8666,7 +8689,7 @@ pretty-error@^2.0.2:
     renderkid "^2.0.1"
     utila "~0.4"
 
-prismjs@^1.18.0:
+prismjs@^1.19.0:
   version "1.19.0"
   resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.19.0.tgz#713afbd45c3baca4b321569f2df39e17e729d4dc"
   integrity sha512-IVFtbW9mCWm9eOIaEkNyo2Vl4NnEifis2GQ7/MLRG5TQe6t+4Sj9J5QWI9i3v+SS43uZBlCAOn+zYTVYQcPXJw==
@@ -8803,10 +8826,10 @@ qs@~6.5.2:
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
   integrity sha512-N5ZAX4/LxJmF+7wN74pUD6qAh9/wnvdQcjq9TZjevvXzSUo7bfmw91saqMjzGS2xq91/odN2dW/WOl7qQHNDGA==
 
-quasar@^1.7.3:
-  version "1.7.3"
-  resolved "https://registry.yarnpkg.com/quasar/-/quasar-1.7.3.tgz#9ddaa9203599ad356bec73ef905f6a6cb8047f52"
-  integrity sha512-FlQdums/kdKNQo4zbOApE9kU/p9ukFyGAFUV5pXY+85uUbucRUXtqnxe4rNKI+FgPhAtP/l6837iF4LaaoE05w==
+quasar@^1.7.4:
+  version "1.7.4"
+  resolved "https://registry.yarnpkg.com/quasar/-/quasar-1.7.4.tgz#47d26c6fe158c129cdb3243221c443d0671c583f"
+  integrity sha512-gAp/q5Bn1lbBsKi7lZHZVNw/VI3EvUm5KwdRx7+O44RBb0i0P3oBib8HjpSzfQGaqdPogJFd7nQ/Az+jAfMYEA==
 
 query-string@^4.1.0:
   version "4.3.4"

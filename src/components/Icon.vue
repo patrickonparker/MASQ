@@ -7,3 +7,9 @@
 		props: ["blok"]
 	};
 </script>
+
+<style>
+	.q-icon:empty {
+		display: none;
+	}
+</style>

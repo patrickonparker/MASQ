@@ -22,9 +22,3 @@
 		props: ["blok"]
 	};
 </script>
-
-<style lang="scss">
-	.q-btn .q-icon:empty {
-		display: none;
-	}
-</style>
