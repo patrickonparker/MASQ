@@ -41,6 +41,61 @@
 			story: {},
 			noStory: false
 		}),
+		meta() {
+			return {
+				title: this.story.content
+					? this.story.content.seo.title
+					: this.story.name,
+				meta: {
+					ogTitle: {
+						name: "og:title",
+						content: this.story.content
+							? this.story.content.seo.og_title
+								? this.story.content.seo.og_title
+								: this.story.content.seo.title
+							: this.story.name
+					},
+					twitterTitle: {
+						name: "twitter:title",
+						content: this.story.content
+							? this.story.content.seo.twitter_title
+								? this.story.content.seo.twitter_title
+								: this.story.content.seo.title
+							: this.story.name
+					},
+					description: {
+						name: "description",
+						content: this.story.content ? this.story.content.seo.description : ""
+					},
+					ogDescription: {
+						name: "og:description",
+						content: this.story.content
+							? this.story.content.seo.og_description
+								? this.story.content.seo.og_description
+								: this.story.content.seo.description
+							: ""
+					},
+					twitterDescription: {
+						name: "twitter:description",
+						content: this.story.content
+							? this.story.content.seo.twitter_description
+								? this.story.content.seo.twitter_description
+								: this.story.content.seo.description
+							: ""
+					},
+					ogImage: {
+						name: "og:image",
+						content: this.story.content ? this.story.content.seo.og_image : ""
+					},
+					twitterImage: {
+						name: "twitter:image",
+						content: this.story.content
+							? this.story.content.seo.twitter_image
+							: ""
+					}
+				}
+			};
+		},
 		computed: {
 			path() {
 				let paths = ["/", "/settings", "/settings/layout", "/settings/theme"];
