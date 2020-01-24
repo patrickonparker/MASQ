@@ -49,7 +49,9 @@ export default async ({ Vue }) => {
               version: version
             })
             .then(response => {
-              this.story = response.data.story;
+              let story = response.data.story;
+              this.story = story;
+              this.metadata = story.content.seo;
             })
             .catch(error => {
               console.log(error);

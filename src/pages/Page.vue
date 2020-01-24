@@ -11,9 +11,7 @@
 			:blok="blok"
 			v-bind="blok"
 		/>
-		<portal to="header">
-			{{ story.name }}
-		</portal>
+		<portal to="header"> {{ story.name }} </portal>
 		<div v-if="story === '404'" class="items-center column text-center">
 			<img
 				src="~assets/404.svg"
@@ -39,59 +37,56 @@
 		name: "Page",
 		data: () => ({
 			story: {},
-			noStory: false
+			noStory: false,
+			metadata: {}
 		}),
 		meta() {
 			return {
-				title: this.story.content
-					? this.story.content.seo.title
-					: this.story.name,
+				title: this.metadata.title ? this.metadata.title : this.story.name,
 				meta: {
 					ogTitle: {
 						name: "og:title",
-						content: this.story.content
-							? this.story.content.seo.og_title
-								? this.story.content.seo.og_title
-								: this.story.content.seo.title
+						content: this.metadata
+							? this.metadata.og_title
+								? this.metadata.og_title
+								: this.metadata.title
 							: this.story.name
 					},
 					twitterTitle: {
 						name: "twitter:title",
-						content: this.story.content
-							? this.story.content.seo.twitter_title
-								? this.story.content.seo.twitter_title
-								: this.story.content.seo.title
+						content: this.metadata
+							? this.metadata.twitter_title
+								? this.metadata.twitter_title
+								: this.metadata.title
 							: this.story.name
 					},
 					description: {
 						name: "description",
-						content: this.story.content ? this.story.content.seo.description : ""
+						content: this.metadata.description ? this.metadata.description : ""
 					},
 					ogDescription: {
 						name: "og:description",
-						content: this.story.content
-							? this.story.content.seo.og_description
-								? this.story.content.seo.og_description
-								: this.story.content.seo.description
+						content: this.metadata
+							? this.metadata.og_description
+								? this.metadata.og_description
+								: this.metadata.description
 							: ""
 					},
 					twitterDescription: {
 						name: "twitter:description",
-						content: this.story.content
-							? this.story.content.seo.twitter_description
-								? this.story.content.seo.twitter_description
-								: this.story.content.seo.description
+						content: this.metadata
+							? this.metadata.twitter_description
+								? this.metadata.twitter_description
+								: this.metadata.description
 							: ""
 					},
 					ogImage: {
 						name: "og:image",
-						content: this.story.content ? this.story.content.seo.og_image : ""
+						content: this.metadata ? this.metadata.og_image : ""
 					},
 					twitterImage: {
 						name: "twitter:image",
-						content: this.story.content
-							? this.story.content.seo.twitter_image
-							: ""
+						content: this.metadata ? this.metadata.twitter_image : ""
 					}
 				}
 			};
