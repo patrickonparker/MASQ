@@ -28,6 +28,8 @@ import Ribbon from "components/Ribbon";
 import Row from "components/Row";
 import Space from "components/Space";
 import Tabs from "components/Tabs";
+import Timeline from "components/Timeline";
+import TimelineEntry from "components/TimelineEntry";
 import Toolbar from "components/Toolbar";
 import Typer from "components/Typer";
 import Video from "components/Video";
@@ -66,6 +68,8 @@ export default async ({ Vue }) => {
   Vue.component("Toolbar", Toolbar);
   Vue.component("Typer", Typer);
   Vue.component("Tabs", Tabs);
+  Vue.component("Timeline", Timeline);
+  Vue.component("TimelineEntry", TimelineEntry);
   Vue.component("Video", Video);
   Vue.component("VideoBackground", VideoBackground);
   Vue.use(PortalVue);
