@@ -257,7 +257,7 @@
 		opacity: 0;
 	}
 
-	textarea {
+	.q-textarea.q-field--labeled .q-field__native {
 		min-height: 4rem;
 	}
 </style>
