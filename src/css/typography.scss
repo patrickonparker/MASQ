@@ -32,7 +32,7 @@ h3.q-markdown--heading-h3,
   line-height: 1.25em;
   font-family: var(--heading-font);
   // responsive
-  font-size: calc(40px + (40 - 48) * ((100vw - 300px) / (1800 - 300)));
+  font-size: calc(40px + (48 - 40) * ((100vw - 300px) / (1800 - 300)));
 }
 
 h4,
