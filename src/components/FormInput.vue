@@ -256,4 +256,8 @@
 		overflow: hidden;
 		opacity: 0;
 	}
+
+	textarea {
+		min-height: 4rem;
+	}
 </style>
