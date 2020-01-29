@@ -45,7 +45,7 @@
 				title: this.metadata.title ? this.metadata.title : this.story.name,
 				meta: {
 					ogTitle: {
-						name: "og:title",
+						property: "og:title",
 						content: this.metadata
 							? this.metadata.og_title
 								? this.metadata.og_title
@@ -65,7 +65,7 @@
 						content: this.metadata.description ? this.metadata.description : ""
 					},
 					ogDescription: {
-						name: "og:description",
+						property: "og:description",
 						content: this.metadata
 							? this.metadata.og_description
 								? this.metadata.og_description
