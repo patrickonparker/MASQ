@@ -81,7 +81,7 @@
 							: ""
 					},
 					ogImage: {
-						name: "og:image",
+						property: "og:image",
 						content: this.metadata ? this.metadata.og_image : ""
 					},
 					twitterImage: {
