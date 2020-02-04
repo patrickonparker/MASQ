@@ -13,6 +13,7 @@ import Embed from "components/Embed";
 import ExpansionItem from "components/ExpansionItem";
 import Form from "components/Form";
 import FormInput from "components/FormInput";
+import FullPage from "components/FullPage";
 import GoogleMap from "components/GoogleMap";
 import Icon from "components/Icon";
 import Link from "components/Link";
@@ -52,6 +53,7 @@ export default async ({ Vue }) => {
   Vue.component("ExpansionItem", ExpansionItem);
   Vue.component("Form", Form);
   Vue.component("FormInput", FormInput);
+  Vue.component("FullPage", FullPage);
   Vue.component("GoogleMap", GoogleMap);
   Vue.component("Icon", Icon);
   Vue.component("Link", Link);
