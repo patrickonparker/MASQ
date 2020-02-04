@@ -77,6 +77,11 @@ export default async ({ Vue }) => {
           fetchVersion("published");
         }
       }
+    },
+    computed: {
+      bp() {
+        return this.$q.screen.name;
+      }
     }
   });
 };

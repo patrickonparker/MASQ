@@ -23,6 +23,7 @@
 				flat
 				ripple
 				round
+				:size="size"
 			>
 				<q-icon
 					:name="blok._uid === current ? 'mdi-circle' : 'mdi-circle-outline'"
@@ -52,6 +53,13 @@
 		},
 		mounted() {
 			this.scrollHandler();
+		},
+		computed: {
+			size() {
+				let user = this.blok.indicator_size;
+				let size = user ? user : this.bp;
+				return size;
+			}
 		}
 	};
 </script>
@@ -71,12 +79,14 @@
 			min-width: 100%;
 			max-width: 100%;
 			scroll-snap-align: start;
+			overflow: hidden;
+			margin: 0 0 !important;
 		}
 
 		&_indicators {
 			position: absolute;
 			top: 0;
-			right: 10px;
+			right: 0;
 			bottom: 0;
 			display: flex;
 			flex-direction: column;
