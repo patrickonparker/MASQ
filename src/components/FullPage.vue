@@ -10,7 +10,7 @@
 				:key="blok._uid"
 				:is="blok.component"
 				:blok="blok"
-				:class="'fullpage_slide'"
+				class="fullpage_slide"
 				:id="'blok-' + blok._uid"
 			/>
 		</div>
@@ -38,16 +38,17 @@
 		props: ["blok"],
 		data: () => ({ current: "" }),
 		methods: {
-			scrollToSlide(el) {
-				let fullpage = document.querySelector(".fullpage");
-				let fullpage_slide = document.querySelector(`#blok-${el._uid}`);
-				let top = fullpage_slide.offsetTop;
-				fullpage.scroll({ top: top, left: 0, behavior: "smooth" });
+			scrollToSlide(blok) {
+				const fullpage = this.$el.childNodes[0];
+				let fullpage_slide = document.querySelector(`#blok-${blok._uid}`);
+				fullpage_slide.scrollIntoView();
 			},
 			scrollHandler() {
-				let fullpage = document.querySelector(".fullpage");
-				let slides = document.querySelectorAll(".fullpage_slide");
-				let current = Math.floor(fullpage.scrollTop / fullpage.clientHeight);
+				const fullpage = this.$el.childNodes[0];
+				let slides = fullpage.childNodes;
+				let current = Math.floor(
+					(fullpage.scrollTop + fullpage.clientHeight / 2) / fullpage.clientHeight
+				);
 				this.current = slides[current].id.replace("blok-", "");
 			}
 		},
@@ -56,8 +57,8 @@
 		},
 		computed: {
 			size() {
-				let user = this.blok.indicator_size;
-				let size = user ? user : this.bp;
+				let userSize = this.blok.indicator_size;
+				let size = userSize ? userSize : this.bp;
 				return size;
 			}
 		}
@@ -67,6 +68,7 @@
 <style lang="scss">
 	.fullpage {
 		overflow-y: scroll;
+		overflow-x: hidden;
 		-webkit-overflow-scrolling: touch;
 		scroll-snap-type: y mandatory;
 		scroll-behavior: smooth;
@@ -95,10 +97,10 @@
 
 			.q-btn {
 				pointer-events: all;
-			}
 
-			.q-icon {
-				text-shadow: 1px 1px 2px black;
+				.q-icon {
+					text-shadow: 1px 1px 2px black;
+				}
 			}
 		}
 	}
