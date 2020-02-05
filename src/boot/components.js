@@ -25,6 +25,7 @@ import Menu from "components/Menu";
 import Parallax from "components/Parallax";
 import Pic from "components/Pic";
 import PortalVue from "portal-vue";
+import Pug from "components/Pug";
 import Ribbon from "components/Ribbon";
 import Row from "components/Row";
 import Space from "components/Space";
@@ -64,6 +65,7 @@ export default async ({ Vue }) => {
   Vue.component("Menu", Menu);
   Vue.component("Parallax", Parallax);
   Vue.component("Pic", Pic);
+  Vue.component("Pug", Pug);
   Vue.component("Ribbon", Ribbon);
   Vue.component("Row", Row);
   Vue.component("Space", Space);
