@@ -1,6 +1,7 @@
 <template>
 	<Fragment>
-		<portal-target name="above" />
+		<!-- Top Portal -->
+		<portal-target name="above" v-if="blok.tab_placement === 'above'" />
 		<q-separator v-if="blok.tab_placement === 'above'" />
 
 		<!-- Tabs -->
@@ -18,6 +19,10 @@
 				/>
 			</q-tab-panel>
 		</q-tab-panels>
+
+		<!-- Bottom Portal -->
+		<q-separator v-if="blok.tab_placement === 'below'" />
+		<portal-target name="below" v-if="blok.tab_placement === 'below'" />
 
 		<!-- Tab Content -->
 		<portal :to="blok.tab_placement">
@@ -42,9 +47,6 @@
 				/>
 			</q-tabs>
 		</portal>
-
-		<q-separator v-if="blok.tab_placement === 'below'" />
-		<portal-target name="below" />
 	</Fragment>
 </template>
 
