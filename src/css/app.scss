@@ -20,6 +20,10 @@
   display: none !important;
 }
 
+.q-page {
+  overflow-x: hidden;
+}
+
 .electron-mac {
   .q-header .q-toolbar {
     transition: 0.1s;

@@ -8,6 +8,7 @@ h1.q-markdown--heading-h1,
 .text-h1 * {
   line-height: 1.25em;
   font-family: var(--heading-font);
+  margin-top: 0;
   // responsive
   font-size: calc(60px + (96 - 60) * ((100vw - 400px) / (1800 - 400)));
 }
@@ -86,7 +87,9 @@ li {
 }
 
 .q-card .q-markdown,
-.q-toolbar .q-markdown {
+.q-toolbar .q-markdown,
+.q-card .q-pug,
+.q-toolbar .q-pug {
   *:first-child {
     margin-top: 0;
   }

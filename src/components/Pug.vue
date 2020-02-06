@@ -1,13 +1,13 @@
 <template>
-	<div v-bind="blok" v-html="pugger" v-editable="blok" />
+	<div v-html="PUGtoHTML" v-bind="blok" v-editable="blok" class="q-pug" />
 </template>
 
 <script>
 	export default {
 		props: ["blok"],
 		computed: {
-			pugger() {
-				var compiled = pug.compile(this.blok.pug);
+			PUGtoHTML() {
+				let compiled = pug.compile(this.blok.pug);
 				return compiled();
 			}
 		}
