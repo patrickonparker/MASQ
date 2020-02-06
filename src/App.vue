@@ -1,5 +1,5 @@
 <template>
-	<div id="q-app">
+	<div id="q-app" :class="pageClasses">
 		<component
 			v-for="blok in global_content"
 			:key="blok._uid"
@@ -167,6 +167,13 @@
 				});
 			} else {
 				fetchVersion("published");
+			}
+		},
+
+		computed: {
+			pageClasses() {
+				console.log(this.$route.path);
+				return this.$route.path.split("/");
 			}
 		}
 	};

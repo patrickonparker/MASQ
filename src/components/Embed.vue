@@ -19,11 +19,12 @@
 </template>
 
 <script>
-	import Fragment from "vue-fragment";
+	import { Fragment } from "vue-fragment";
 	import postscribe from "postscribe";
 
 	export default {
 		props: ["blok"],
+		components: { Fragment },
 		mounted: function() {
 			postscribe(`#${this.blok._uid}`, `${this.blok.script_tag}`);
 		}
