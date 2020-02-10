@@ -30,7 +30,7 @@
 				}
 				let autoplay = `?autoplay=${this.blok.auto_play ? "1" : "0"}`;
 				let mute = `&mute=${this.blok.mute ? "1" : "0"}`;
-				return baseURL + videoID + autoplay + mute;
+				return baseURL + videoID + autoplay + mute + '&rel=0';
 			}
 		}
 	};
