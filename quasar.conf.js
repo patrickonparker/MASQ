@@ -54,8 +54,7 @@ module.exports = function(ctx) {
     htmlVariables: {
       SB_TOKEN: process.env.SB_TOKEN,
       NAME: process.env.NAME,
-      DESCRIPTION: process.env.DESCRIPTION,
-      GTM: process.env.GTM
+      DESCRIPTION: process.env.DESCRIPTION
     },
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
