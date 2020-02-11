@@ -67,10 +67,10 @@ module.exports = function(ctx) {
       vueRouterMode: "history",
       // showProgress: false,
       gzip: true,
-			analyze: true,
+			// analyze: true,
 			minify: true,
       // preloadChunks: false,
-      extractCSS: false,
+      extractCSS: true,
 
       // https://quasar.dev/quasar-cli/cli-documentation/handling-webpack
       extendWebpack(cfg) {}
