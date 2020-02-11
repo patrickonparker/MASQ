@@ -41,55 +41,57 @@
 			metadata: {}
 		}),
 		meta() {
-			return {
-				title: this.metadata.title ? this.metadata.title : this.story.name,
-				meta: {
-					ogTitle: {
-						property: "og:title",
-						content: this.metadata
-							? this.metadata.og_title
+			if (this.metadata) {
+				return {
+					title: this.metadata.title ? this.metadata.title : this.story.name,
+					meta: {
+						ogTitle: {
+							property: "og:title",
+							content: this.metadata
 								? this.metadata.og_title
-								: this.metadata.title
-							: this.story.name
-					},
-					twitterTitle: {
-						name: "twitter:title",
-						content: this.metadata
-							? this.metadata.twitter_title
+									? this.metadata.og_title
+									: this.metadata.title
+								: this.story.name
+						},
+						twitterTitle: {
+							name: "twitter:title",
+							content: this.metadata
 								? this.metadata.twitter_title
-								: this.metadata.title
-							: this.story.name
-					},
-					description: {
-						name: "description",
-						content: this.metadata.description ? this.metadata.description : ""
-					},
-					ogDescription: {
-						property: "og:description",
-						content: this.metadata
-							? this.metadata.og_description
+									? this.metadata.twitter_title
+									: this.metadata.title
+								: this.story.name
+						},
+						description: {
+							name: "description",
+							content: this.metadata.description ? this.metadata.description : ""
+						},
+						ogDescription: {
+							property: "og:description",
+							content: this.metadata
 								? this.metadata.og_description
-								: this.metadata.description
-							: ""
-					},
-					twitterDescription: {
-						name: "twitter:description",
-						content: this.metadata
-							? this.metadata.twitter_description
+									? this.metadata.og_description
+									: this.metadata.description
+								: ""
+						},
+						twitterDescription: {
+							name: "twitter:description",
+							content: this.metadata
 								? this.metadata.twitter_description
-								: this.metadata.description
-							: ""
-					},
-					ogImage: {
-						property: "og:image",
-						content: this.metadata ? this.metadata.og_image : ""
-					},
-					twitterImage: {
-						name: "twitter:image",
-						content: this.metadata ? this.metadata.twitter_image : ""
+									? this.metadata.twitter_description
+									: this.metadata.description
+								: ""
+						},
+						ogImage: {
+							property: "og:image",
+							content: this.metadata ? this.metadata.og_image : ""
+						},
+						twitterImage: {
+							name: "twitter:image",
+							content: this.metadata ? this.metadata.twitter_image : ""
+						}
 					}
-				}
-			};
+				};
+			}
 		},
 		computed: {
 			path() {
