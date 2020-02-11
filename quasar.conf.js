@@ -66,10 +66,11 @@ module.exports = function(ctx) {
       scopeHoisting: true,
       vueRouterMode: "history",
       // showProgress: false,
-      // gzip: true,
-      // analyze: true,
+      gzip: true,
+			analyze: true,
+			minify: true,
       // preloadChunks: false,
-      // extractCSS: false,
+      extractCSS: false,
 
       // https://quasar.dev/quasar-cli/cli-documentation/handling-webpack
       extendWebpack(cfg) {}
@@ -78,7 +79,7 @@ module.exports = function(ctx) {
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-devServer
     devServer: {
       // https: true,
-      // port: 8080,
+      port: 8080,
       open: true // opens browser window automatically
     },
 
